@@ -25,6 +25,4 @@
             $this->name = $name;
         }
     }
-
-
 ?>
