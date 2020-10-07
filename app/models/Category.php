@@ -1,4 +1,6 @@
 <?php
+    namespace app;
+    
     class Category
     {
         private $id;
@@ -25,4 +27,5 @@
             $this->name = $name;
         }
     }
+
 ?>
