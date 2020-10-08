@@ -1,5 +1,4 @@
 <?php
-    namespace app;
     
     class Category
     {
@@ -25,6 +24,12 @@
         public function setName($name)
         {
             $this->name = $name;
+        }
+        
+        //insert
+        public function insert()
+        {
+            echo "Insert";
         }
     }
 

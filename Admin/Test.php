@@ -1,5 +1,10 @@
 <?php
     require ('../app/database/Connection.php');
+    //Models
     require ('../app/models/Category.php');
-    require_once('../app/models/Test.php');
+    //Controllers
+    require_once('../app/controllers/CategoryController.php');
+    
+    global $categoryController;
+    echo '<br>'.$categoryController->getAll();
 ?>
