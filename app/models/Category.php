@@ -4,6 +4,7 @@
     {
         private $id;
         private $name;
+        private $description;
         
         // id
         public function getId()
@@ -26,10 +27,21 @@
             $this->name = $name;
         }
         
+        //description
+        public function getDescription()
+        {
+            return $this->description;
+        }
+        
+        public function setDescription($description)
+        {
+            $this->description = $description;
+        }
+        
         //insert
         public function insert()
         {
-            echo "Insert";
+            
         }
     }
 
