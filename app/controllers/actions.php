@@ -1,18 +1,21 @@
 <?php
 
-    require_once('../database/Connection.php');
+    //require_once('../database/Connection.php');
     require_once('../models/Category.php');
     require_once('CategoryController.php');
-    $c = new CategoryController();
-    //action
     
-    function Category($action)
+    //action function of each class
+    
+    function Category($action,$c)
     {
-        $c = new Category();
+        $cat = new Category();
         switch($action)
         {
-            case 'insert' : $c->insert();
-                break;
+            case 'insert' : $cat->setName("Habib");
+                            $cat->setDescription("l'information de l'informatique");
+                            $c->setCategory($cat);
+                            $c->insert();                
+            break;
         }
     }
     
@@ -22,7 +25,7 @@
         {
             switch($_GET['class'])
             {
-                case 'Category' : Category($_GET['action']);
+                case 'Category' : Category($_GET['action'],$categoryController);
                     break;
             }
         }

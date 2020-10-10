@@ -15,7 +15,14 @@
         
         public function insert()
         {
-            $this->category->insert();
+            if ($this->category->insert())
+            {
+                echo "{response : Good}";
+            }
+            else
+            {
+                echo "{response : Bad}";
+            }
         }
         
         public function getAll()

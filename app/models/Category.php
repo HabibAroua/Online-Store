@@ -1,5 +1,5 @@
 <?php
-    
+
     class Category
     {
         private $id;
@@ -41,7 +41,23 @@
         //insert
         public function insert()
         {
-            
+            try
+            {
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'name' => $this->name,
+                    'description' => $this->description,
+                ];
+                $sql = "INSERT INTO Category (name, description) VALUES (:name, :description)";
+                $stmt= $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
+            }
+            catch(Exception $e)
+            {
+                return false;
+            }
         }
     }
 
