@@ -16,10 +16,11 @@
 	            $this->username=$username;	
 	            $this->password	=$password;
 				$this->con=new PDO("mysql:host=$this->host;	dbname=$this->dbname",$this->username,$this->password);
+				$this->con->exec("set names utf8");
 			}	
             catch(PDOException	$pe)	
 	        {
-				echo "connexion	a	la	base	a	echouee";
+				echo "Error of connection to database";
 			}
 		}
 		
@@ -64,5 +65,5 @@
 		}
 	}
 	
-	$connection=new Connection('localhost','zabbix_db','root','');
+	$connection=new Connection('localhost','commerce','root','');
 ?>
