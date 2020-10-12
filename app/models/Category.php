@@ -59,6 +59,30 @@
                 return false;
             }
         }
+        
+        //delete
+        public function delete()
+        {
+            try
+            {
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'id' => $this->id,
+                ];
+                $sql = "DELETE from Category where id =:id";
+                $stmt = $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
+        }
+        
+        //update
     }
 
 ?>

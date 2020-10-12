@@ -25,6 +25,18 @@
             }
         }
         
+        public function delete()
+        {
+            if($this->category->delete())
+            {
+                echo "{response : Good}";
+            }
+            else
+            {
+                echo "{response : Bad}";
+            }
+        }
+        
         public function getAll()
         {
             return 'Array()';

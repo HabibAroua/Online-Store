@@ -9,6 +9,7 @@
     function Category($action,$c)
     {
         $cat = new Category();
+        $c = new CategoryController();
         switch($action)
         {
             case 'insert' : $cat->setName("Habib");
@@ -16,6 +17,9 @@
                             $c->setCategory($cat);
                             $c->insert();                
             break;
+            case 'delete' : $cat->setId(1);
+                            $c->setCategory($cat);
+                            $c->delete();
         }
     }
     
