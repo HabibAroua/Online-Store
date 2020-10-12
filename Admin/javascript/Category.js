@@ -13,6 +13,26 @@ class Category
         alert(x);
     }
     
+    delete(id)
+    {
+        
+    }
+    
+    update(id)
+    {
+        
+    }
+    
+    search()
+    {
+        
+    }
+    
+    getAll()
+    {
+        
+    }
+    
     action()
     {
         $(document).ready
