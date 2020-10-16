@@ -112,7 +112,20 @@
         {
             try
             {
+                require_once('Connection_Chain.php');
                 $T = array();
+                $res = $connection->con->query("SELECT * from Category");
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (
+                        'id'=>$tab[0],
+                        'name'=>$tab[1],
+                        'description'=>$tab[2],
+                    );
+                    $i++;
+                }
                 return $T;
             }
             catch(Exception $e)

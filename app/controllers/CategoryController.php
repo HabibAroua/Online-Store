@@ -53,6 +53,11 @@
         {
             return 'Array()';
         }
+        
+        public function getAllJSON()
+        {
+            return $this->category->getAllJSON();
+        }
     }
     
     $categoryController = new CategoryController();

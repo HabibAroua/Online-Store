@@ -26,6 +26,8 @@
                             $c->setCategory($cat);
                             $c->update();
             break;
+            case 'getAll' : echo $c->getAllJSON();
+            break;
         }
     }
     
