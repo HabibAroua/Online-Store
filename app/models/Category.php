@@ -83,11 +83,21 @@
         }
         
         //update()
-        public function update($id)
+        public function update()
         {
             try
             {
                 require_once('Connection_Chain.php');
+                $data =
+                [
+                    'id' => $this->id,
+                    'name' => $this->name,
+                    'description' => $this->description,
+                ];
+                $sql = "UPDATE Category SET name = :name , description = :description WHERE id = :id";
+                echo $sql;
+                $stmt= $connection->con->prepare($sql);
+                $stmt->execute($data);
                 return true;
             }
             catch(Exception $e)
@@ -118,5 +128,4 @@
             return json_encode($this->getAll());
         }
     }
-
 ?>

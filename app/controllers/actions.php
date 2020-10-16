@@ -12,14 +12,20 @@
         $c = new CategoryController();
         switch($action)
         {
-            case 'insert' : $cat->setName("Habib");
-                            $cat->setDescription("l'information de l'informatique");
+            case 'insert' : $cat->setName($_POST['name']);
+                            $cat->setDescription($_POST['description']);
                             $c->setCategory($cat);
                             $c->insert();                
             break;
-            case 'delete' : $cat->setId(1);
+            case 'delete' : $cat->setId($_POST['id']);
                             $c->setCategory($cat);
                             $c->delete();
+            case 'update' : $cat->setId($_POST['id']);
+                            $cat->setName($_POST['name']);
+                            $cat->setDescription($_POST['description']);
+                            $c->setCategory($cat);
+                            $c->update();
+            break;
         }
     }
     

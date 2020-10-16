@@ -37,6 +37,18 @@
             }
         }
         
+        public function update()
+        {
+            if($this->category->update())
+            {
+                echo "{response : Good}";
+            }
+            else
+            {
+                echo "{response : Bad}";
+            }
+        }
+        
         public function getAll()
         {
             return 'Array()';
@@ -45,5 +57,4 @@
     
     $categoryController = new CategoryController();
 
-    
 ?>
