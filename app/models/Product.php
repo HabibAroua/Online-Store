@@ -102,5 +102,26 @@
                 return false;
             }
         }
+        
+        //delete
+        public function delete()
+        {
+            try
+            {
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'reference' => $this->reference,
+                ];
+                $sql = "DELETE from Product where reference =:reference";
+                $stmt = $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
     }
 ?>
