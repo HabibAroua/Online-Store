@@ -1,4 +1,5 @@
 <?php
+
     class Product
     {
         private $reference;
@@ -40,8 +41,44 @@
         {
             $this->price = $price;
         }
+        
         //amount
+        public function getAmount()
+        {
+            return $this->amount;
+        }
+        
+        public function setAmount($amount)
+        {
+            $this->amount = $amount;
+        }
+        
         //picture
+        public function getPicture()
+        {
+            return $this->picture;
+        }
+        
+        public function setPicture($picture)
+        {
+            $this->picture = $picture;
+        }
+        
         //description
+        public function getDescription()
+        {
+            return $this->description;
+        }
+        
+        public function setDescription($description)
+        {
+            $this->description = $description;
+        }
+        
+        //add
+        public function add()
+        {
+            
+        }
     }
 ?>
