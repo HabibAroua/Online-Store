@@ -123,5 +123,40 @@
                 echo "Error : ".$e;
                 return false;
             }
+        }
+        
+        //update
+        public function update($ref)
+        {
+            try
+            {
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'reference' => $this->name,
+                    'label' => $this->description,
+                    'price' => $this->price,
+                    'amount' => $this->amount,
+                    'picture' => $this->picture,
+                    'description' => $this->description,
+                ];
+                $sql = "UPDATE Product SET
+                        reference = :reference ,
+                        label = :label ,
+                        price = :price ,
+                        amount = :amount ,
+                        picture = :picture ,
+                        description = :description
+                        WHERE reference = $ref";
+                $stmt= $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
+        }
     }
 ?>
