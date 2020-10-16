@@ -31,6 +31,11 @@
         }
     }
     
+    function Product($action , $product)
+    {
+        
+    }
+    
     if(isset($_GET['class']))
     {
         if($_GET['action'])
