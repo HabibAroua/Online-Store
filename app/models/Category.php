@@ -38,7 +38,7 @@
             $this->description = $description;
         }
         
-        //insert
+        //insert()
         public function insert()
         {
             try
@@ -60,7 +60,7 @@
             }
         }
         
-        //delete
+        //delete()
         public function delete()
         {
             try
@@ -82,7 +82,41 @@
             }
         }
         
-        //update
+        //update()
+        public function update($id)
+        {
+            try
+            {
+                require_once('Connection_Chain.php');
+                return true;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
+        }
+        
+        //getAll()
+        public function getAll()
+        {
+            try
+            {
+                $T = array();
+                return $T;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
+        }
+        
+        //convert array to JSON
+        public function getAllJSON()
+        {
+            return json_encode($this->getAll());
+        }
     }
 
 ?>
