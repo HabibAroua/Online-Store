@@ -78,7 +78,29 @@
         //add
         public function add()
         {
-            
+            try
+            {
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'reference' => $this->name,
+                    'label' => $this->description,
+                    'price' => $this->price,
+                    'amount' => $this->amount,
+                    'picture' => $this->picture,
+                    'description' => $this->description,
+                ];
+                $sql = "INSERT INTO Product (reference, label, price, amount, picture, description)
+                        VALUES (:reference, :label, :price, :amount, :picture, :description)";
+                $stmt= $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
         }
     }
 ?>
