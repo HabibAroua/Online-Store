@@ -56,6 +56,7 @@
             }
             catch(Exception $e)
             {
+                echo "Error : ".$e;
                 return false;
             }
         }
