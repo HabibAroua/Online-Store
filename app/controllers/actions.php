@@ -43,7 +43,9 @@
             switch($_GET['class'])
             {
                 case 'Category' : Category($_GET['action'],$categoryController);
-                    break;
+                break;
+                case 'Product' : Product($_GET['action']);
+                break;
             }
         }
         else
