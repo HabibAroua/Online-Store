@@ -28,6 +28,8 @@
             break;
             case 'getAll' : echo $c->getAllJSON();
             break;
+            default : echo "Error, plase enter the right parameters";
+            break;
         }
     }
     
