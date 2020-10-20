@@ -57,11 +57,12 @@
                 {
                     $T[$i] = $Array = array
                     (
-                        /*
-                        'id'=>$tab[0],  change the values of thoses attributes 
-                        'name'=>$tab[1],
-                        'description'=>$tab[2],
-                        */ 
+                        'reference'=>$tab[0], 
+                        'label'=>$tab[1],
+                        'price'=>$tab[2],
+                        'amount' =>$tab[3],
+                        'picture' =>$tab[4],
+                        'description' =>$tab[5]
                     );
                     $i++;
                 }
