@@ -5,6 +5,12 @@
         private $id;
         private $name;
         private $description;
+        private $products;
+        
+        public function __construct()
+        {
+            $this->products = array();
+        }
         
         // id
         public function getId()
@@ -36,6 +42,36 @@
         public function setDescription($description)
         {
             $this->description = $description;
+        }
+        
+        //products
+        public function getProducts()
+        {
+            try
+            {
+                require_once('Connection_Chain.php');
+                $T = array();
+                $res = $connection->con->query("SELECT * from Product where idCat = $id");
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (
+                        /*
+                        'id'=>$tab[0],  change the values of thoses attributes 
+                        'name'=>$tab[1],
+                        'description'=>$tab[2],
+                        */ 
+                    );
+                    $i++;
+                }
+                return $T;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
         }
         
         //insert()
