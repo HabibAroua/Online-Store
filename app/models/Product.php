@@ -101,9 +101,10 @@
                     'amount' => $this->amount,
                     'picture' => $this->picture,
                     'description' => $this->description,
+                    'idCat' =>$this->idCat,
                 ];
-                $sql = "INSERT INTO Product (reference, label, price, amount, picture, description)
-                        VALUES (:reference, :label, :price, :amount, :picture, :description)";
+                $sql = "INSERT INTO Product (reference, label, price, amount, picture, description, idCat)
+                        VALUES (:reference, :label, :price, :amount, :picture, :description, :idCat)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;

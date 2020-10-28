@@ -9,9 +9,21 @@
             $this->product = new Product();
         }
         
+        public function setProduct($product)
+        {
+            $this->product = $product;
+        }
+        
         public function add()
         {
-            
+            if($this->product->add)
+            {
+                return "{response : Good}";
+            }
+            else
+            {
+                return "{response : Bad}";
+            }
         }
         
         public function update()

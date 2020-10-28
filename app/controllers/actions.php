@@ -2,7 +2,9 @@
 
     //require_once('../database/Connection.php');
     require_once('../models/Category.php');
+    require_once('../models/Product.php');
     require_once('CategoryController.php');
+    require_once('ProductController.php');
     
     //action function of each class
     
@@ -33,9 +35,14 @@
         }
     }
     
-    function Product($action , $product)
+    function Product($action)
     {
-        
+        $productCpntroller = new ProductController();
+        switch($action)
+        {
+            case 'insert' : echo "Add";
+            break;
+        }
     }
     
     if(isset($_GET['class']))
