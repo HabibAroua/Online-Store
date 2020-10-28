@@ -8,7 +8,8 @@
         private $amount;
         private $picture;
         private $description;
-        
+        private $idCat;
+
         //reference
         public function getReference()
         {
@@ -73,6 +74,17 @@
         public function setDescription($description)
         {
             $this->description = $description;
+        }
+        
+        //idCat
+        public function getIdCat()
+        {
+            return $this->idCat;
+        }
+        
+        public function setIdCat($idCat)
+        {
+            $this->idCat = $idCat;
         }
         
         //add
