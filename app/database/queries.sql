@@ -10,3 +10,16 @@ create table Category
     name varchar(20),
     description text
 )
+
+create table Product
+(
+    reference varchar(30),
+    label varchar(25),
+    price double,
+    amount int,
+    picture BINARY,
+    description text,
+    idCat int
+);
+
+alter table Product add CONSTRAINT fk1 FOREIGN key (idCat) REFERENCES Category(id);
