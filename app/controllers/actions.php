@@ -37,10 +37,21 @@
     
     function Product($action)
     {
+        $p = new Product();
         $productCpntroller = new ProductController();
         switch($action)
         {
-            case 'insert' : echo "Add";
+            case 'insert' : $p->setReference($_POST['reference']);
+                            $p->setLabel($_POST['label']);
+                            $p->setPrice($_POST['price']);
+                            $p->setAmount($_POST['amount']);
+                            $p->setPicture($_POST['picture']);
+                            $p->setDescription($_POST['description']);
+                            $p->setIdCat($_POST['idCat']);
+                            $productCpntroller->setProduct($p);
+                            $productCpntroller->add();
+            break;
+            case 'delete' : echo "delete";
             break;
         }
     }
