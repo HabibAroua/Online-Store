@@ -16,13 +16,13 @@
         
         public function add()
         {
-            if($this->product->add)
+            if($this->product->add())
             {
-                return "{response : Good}";
+                echo "{response : Good}";
             }
             else
             {
-                return "{response : Bad}";
+                echo "{response : Bad}";
             }
         }
         

@@ -95,8 +95,8 @@
                 require_once('Connection_Chain.php');
                 $data =
                 [
-                    'reference' => $this->name,
-                    'label' => $this->description,
+                    'reference' => $this->reference,
+                    'label' => $this->label,
                     'price' => $this->price,
                     'amount' => $this->amount,
                     'picture' => $this->picture,
