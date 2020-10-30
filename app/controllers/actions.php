@@ -41,15 +41,24 @@
         $productCpntroller = new ProductController();
         switch($action)
         {
-            case 'insert' : $p->setReference($_POST['reference']);
-                            $p->setLabel($_POST['label']);
-                            $p->setPrice($_POST['price']);
-                            $p->setAmount($_POST['amount']);
-                            $p->setPicture($_POST['picture']);
-                            $p->setDescription($_POST['description']);
-                            $p->setIdCat($_POST['idCat']);
-                            $productCpntroller->setProduct($p);
-                            $productCpntroller->add();
+            case 'insert' : if((isset($_POST['reference'])) && (isset($_POST['label'])) && (isset($_POST['price']))
+                                && (isset($_POST['amount'])) && (isset($_POST['picture'])) && (isset($_POST['description']))
+                                && (isset($_POST['idCat'])))
+                            {
+                                $p->setReference($_POST['reference']);
+                                $p->setLabel($_POST['label']);
+                                $p->setPrice($_POST['price']);
+                                $p->setAmount($_POST['amount']);
+                                $p->setPicture($_POST['picture']);
+                                $p->setDescription($_POST['description']);
+                                $p->setIdCat($_POST['idCat']);
+                                $productCpntroller->setProduct($p);
+                                $productCpntroller->add();
+                            }
+                            else
+                            {
+                                echo "Error : There are 7 inputs !!";
+                            }
             break;
             case 'delete' : $p->setReference($_POST['reference']);
                             $productCpntroller->setProduct($p);
