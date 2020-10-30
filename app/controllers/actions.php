@@ -60,9 +60,16 @@
                                 echo "Error : There are 7 inputs !!";
                             }
             break;
-            case 'delete' : $p->setReference($_POST['reference']);
-                            $productCpntroller->setProduct($p);
-                            $productCpntroller->delete();
+            case 'delete' : if(isset($_POST['reference']))
+                            {
+                                $p->setReference($_POST['reference']);
+                                $productCpntroller->setProduct($p);
+                                $productCpntroller->delete();
+                            }
+                            else
+                            {
+                                echo "There are only one input !!";
+                            }
             break;
         }
     }
