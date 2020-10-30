@@ -33,7 +33,14 @@
         
         public function delete()
         {
-            
+            if($this->product->delete())
+            {
+                echo "{response : good}";
+            }
+            else
+            {
+                echo "{response : bad}";
+            }
         }
         
         public function getAll()

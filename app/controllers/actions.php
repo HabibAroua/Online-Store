@@ -51,7 +51,9 @@
                             $productCpntroller->setProduct($p);
                             $productCpntroller->add();
             break;
-            case 'delete' : echo "delete";
+            case 'delete' : $p->setReference($_POST['reference']);
+                            $productCpntroller->setProduct($p);
+                            $productCpntroller->delete();
             break;
         }
     }
