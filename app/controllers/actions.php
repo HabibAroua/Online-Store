@@ -71,6 +71,8 @@
                                 echo "There are only one input !!";
                             }
             break;
+            case 'update' : echo "Update product";
+            break;
         }
     }
     

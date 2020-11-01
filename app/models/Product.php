@@ -160,7 +160,7 @@
                         amount = :amount ,
                         picture = :picture ,
                         description = :description
-                        WHERE reference = $ref";
+                        WHERE reference = '$ref'";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
