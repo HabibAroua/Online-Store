@@ -71,7 +71,24 @@
                                 echo "There are only one input !!";
                             }
             break;
-            case 'update' : echo "Update product";
+            case 'update' : if((isset($_POST['reference'])) && (isset($_POST['label'])) && (isset($_POST['price']))
+                                && (isset($_POST['amount'])) && (isset($_POST['picture'])) && (isset($_POST['description']))
+                                && (isset($_POST['idCat'])) && (isset($_POST['ref'])))
+                            {
+                                $p->setReference($_POST['reference']);
+                                $p->setLabel($_POST['label']);
+                                $p->setPrice($_POST['price']);
+                                $p->setAmount($_POST['amount']);
+                                $p->setPicture($_POST['picture']);
+                                $p->setDescription($_POST['description']);
+                                $p->setIdCat($_POST['idCat']);
+                                $productCpntroller->setProduct($p);
+                                $productCpntroller->update($_POST['ref']);
+                            }
+                            else
+                            {
+                                echo "Error : there are 8 inputs !!";
+                            }
             break;
         }
     }

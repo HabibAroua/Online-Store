@@ -26,9 +26,16 @@
             }
         }
         
-        public function update()
+        public function update($ref)
         {
-            
+            if($this->product->update($ref))
+            {
+                echo "{response : good}";
+            }
+            else
+            {
+                echo "{response : bad}";
+            }
         }
         
         public function delete()
