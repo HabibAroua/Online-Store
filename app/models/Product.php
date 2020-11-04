@@ -171,5 +171,17 @@
                 return false;
             }
         }
+        
+        //getAll
+        public function getAll()
+        {
+            return null;
+        }
+        
+        //getAllJSON
+        public function getAllJSON()
+        {
+            return null;
+        }
     }
 ?>
