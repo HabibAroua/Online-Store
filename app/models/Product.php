@@ -188,7 +188,14 @@
         //getAllJSON
         public function getAllJSON()
         {
-            return null;
+            try
+            {
+                return null;
+            }
+            catch(Exception $e)
+            {
+                return null;
+            }
         }
     }
 ?>
