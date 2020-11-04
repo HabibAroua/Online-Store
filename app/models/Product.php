@@ -175,7 +175,14 @@
         //getAll
         public function getAll()
         {
-            return null;
+            try
+            {
+                return null;   
+            }
+            catch(Exception $e)
+            {
+                return null;
+            }
         }
         
         //getAllJSON
