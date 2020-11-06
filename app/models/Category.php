@@ -176,7 +176,15 @@
         //convert array to JSON
         public function getAllJSON()
         {
-            return json_encode($this->getAll());
+            try
+            {
+                return json_encode($this->getAll());
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return null;
+            }
         }
     }
 ?>

@@ -208,7 +208,7 @@
         {
             try
             {
-                return null;
+                return json_encode($this->getAll());
             }
             catch(Exception $e)
             {
