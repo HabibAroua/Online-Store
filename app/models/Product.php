@@ -177,11 +177,29 @@
         {
             try
             {
-                return null;   
+                require_once('Connection_Chain.php');
+                $T = array();
+                $res = $connection->con->query("SELECT * from Product");
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (
+                        'reference'=>$tab[0],
+                        'label'=>$tab[1],
+                        'price'=>$tab[2],
+                        'amount' => $tab[3],
+                        'picture' => $tab[4],
+                        'description'=> $tab[5],
+                    );
+                    $i++;
+                }
+                return $T;
             }
             catch(Exception $e)
             {
-                return null;
+                echo "Error : ".$e;
+                return false;
             }
         }
         
