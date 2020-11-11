@@ -113,27 +113,62 @@
         
         public function add()
         {
-            
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
+            }
         }
         
         public function delete()
         {
-            
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
+            }
         }
         
         public function update()
         {
-            
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
+            }
         }
         
         public function getAll()
         {
-            
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
+            }
         }
         
         public function findById($id)
         {
-            
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
+            }
         }
     }
 ?>
