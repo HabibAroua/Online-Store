@@ -144,11 +144,12 @@
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
         
@@ -156,11 +157,12 @@
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
         
@@ -168,11 +170,12 @@
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
         
@@ -180,11 +183,12 @@
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
     }
