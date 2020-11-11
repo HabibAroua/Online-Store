@@ -110,5 +110,30 @@
         {
             $this->nationality = $nationality;
         }
+        
+        public function add()
+        {
+            
+        }
+        
+        public function delete()
+        {
+            
+        }
+        
+        public function update()
+        {
+            
+        }
+        
+        public function getAll()
+        {
+            
+        }
+        
+        public function findById($id)
+        {
+            
+        }
     }
 ?>
