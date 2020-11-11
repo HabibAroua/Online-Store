@@ -115,11 +115,28 @@
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'first_name' => $this->first_name,
+                    'last_name' => $this->last_name,
+                    'date_of_birth' => $this->date_of_birth,
+                    'role' => $this->role,
+                    'email' => $this->email,
+                    'telephone' => $this->telephone,
+                    'address' =>$this->address,
+                    'nationality' => $this->nationality,
+                ];
+                $sql = "INSERT INTO user (first_name, last_name, date_of_birth, role, email, telephone, address, nationality)
+                        VALUES (:first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality)";
+                $stmt= $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
         
