@@ -230,6 +230,18 @@
                 return false;
             }
         }
+        
+        public function activeAccount()
+        {
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
+            }
+        }
     }
     
 ?>
