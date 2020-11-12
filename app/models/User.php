@@ -159,6 +159,8 @@
                 require_once('Connection_Chain.php');
                 $data =
                 [
+                    'login' => $this->login,
+                    'password' => $this->password,
                     'first_name' => $this->first_name,
                     'last_name' => $this->last_name,
                     'date_of_birth' => $this->date_of_birth,
@@ -169,8 +171,8 @@
                     'nationality' => $this->nationality,
                     'isActive' => $this->isActive,
                 ];
-                $sql = "INSERT INTO user (first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive)
-                        VALUES (:first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive)";
+                $sql = "INSERT INTO user (login, password, first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive)
+                        VALUES (:login, :password, :first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
