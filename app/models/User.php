@@ -13,6 +13,11 @@
         private $nationality;
         private $isActive;
         
+        public function __construct()
+        {
+            $this->isActive = 0;
+        }
+        
         //id
         public function getId()
         {
@@ -138,9 +143,10 @@
                     'telephone' => $this->telephone,
                     'address' =>$this->address,
                     'nationality' => $this->nationality,
+                    'isActive' => $this->isActive,
                 ];
-                $sql = "INSERT INTO user (first_name, last_name, date_of_birth, role, email, telephone, address, nationality)
-                        VALUES (:first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality)";
+                $sql = "INSERT INTO user (first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive)
+                        VALUES (:first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
