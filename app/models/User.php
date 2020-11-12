@@ -284,7 +284,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                //we can use the method getAll 
             }
             catch(Exception $e)
             {
