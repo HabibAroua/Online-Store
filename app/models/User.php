@@ -231,15 +231,24 @@
             }
         }
         
-        public function activeAccount()
+        public function activeAccount($id)
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
+                $data =
+                [
+                    'isActive' => $this->isActive, // you should update teh field isActive to 1 (use setIsActive method)
+                ];
+                $sql = "UPDATE User SET isActive = :isActive WHERE id=$id";
+                $stmt = $connection->con->prepare($sql);
+                $stmt->execute($data);
+                return true;
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
     }
