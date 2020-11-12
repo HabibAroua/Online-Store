@@ -205,6 +205,7 @@
                         'telephone' => $tab[6],
                         'address' => $tab[7],
                         'nationality' => $tab[8],
+                        'isActive' =>$tab[9],
                     );
                     $i++;
                 }
