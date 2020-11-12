@@ -15,7 +15,7 @@
         
         public function __construct()
         {
-            $this->isActive = 0;
+            $this->isActive = 0; // The user's account is initially deactivated
         }
         
         //id
