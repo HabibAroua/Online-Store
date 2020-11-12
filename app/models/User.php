@@ -222,16 +222,18 @@
                 {
                     $T[$i] = $Array = array
                     (
-                        'id'=>$tab[0],
-                        'first_name'=>$tab[1],
-                        'last_name'=>$tab[2],
-                        'date_of_birth' => $tab[3],
-                        'role' => $tab[4],
-                        'email'=> $tab[5],
-                        'telephone' => $tab[6],
-                        'address' => $tab[7],
-                        'nationality' => $tab[8],
-                        'isActive' =>$tab[9],
+                        'id'=> $tab[0],
+                        'login' => $tab[1],
+                        'password' => $tab[2],
+                        'first_name'=> $tab[3],
+                        'last_name'=> $tab[4],
+                        'date_of_birth' => $tab[5],
+                        'role' => $tab[6],
+                        'email'=> $tab[7],
+                        'telephone' => $tab[8],
+                        'address' => $tab[9],
+                        'nationality' => $tab[10],
+                        'isActive' =>$tab[11],
                     );
                     $i++;
                 }
@@ -278,7 +280,18 @@
             }
         }
         
-        public function 
+        public function validateLoginAndPassword()
+        {
+            try
+            {
+                require_once('Connection_Chain.php');
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
+        }
     }
     
 ?>
