@@ -3,6 +3,8 @@
     class User
     {
         private $id;
+        private $login;
+        private $password;
         private $first_name;
         private $last_name;
         private $date_of_birth;
@@ -251,6 +253,8 @@
                 return false;
             }
         }
+        
+        public function 
     }
     
 ?>
