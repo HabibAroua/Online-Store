@@ -11,6 +11,7 @@
         private $telephone;
         private $address;
         private $nationality;
+        private $isActive;
         
         //id
         public function getId()
@@ -111,6 +112,17 @@
             $this->nationality = $nationality;
         }
         
+        //isActive
+        public function getIsActive()
+        {
+            return $this->isActive;
+        }
+        
+        public function setIsActive($isActive)
+        {
+            $this->isActive = $isActive;
+        }
+        
         public function add()
         {
             try
@@ -171,6 +183,26 @@
             try
             {
                 require_once('Connection_Chain.php');
+                $T = array();
+                $res = $connection->con->query("SELECT * from User");
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (
+                        'id'=>$tab[0],
+                        'first_name'=>$tab[1],
+                        'last_name'=>$tab[2],
+                        'date_of_birth' => $tab[3],
+                        'role' => $tab[4],
+                        'email'=> $tab[5],
+                        'telephone' => $tab[6],
+                        'address' => $tab[7],
+                        'nationality' => $tab[8],
+                    );
+                    $i++;
+                }
+                return $T;
             }
             catch(Exception $e)
             {
