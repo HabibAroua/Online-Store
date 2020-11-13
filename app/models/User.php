@@ -197,11 +197,34 @@
             }
         }
         
-        public function update()
+        public function update($id)
         {
             try
             {
                 require_once('Connection_Chain.php');
+                $data =
+                [
+                    'login' => $this->login,
+                    'first_name' => $this->first_name,
+                    'last_name' => $this->last_name,
+                    'date_of_birth' => $this->date_of_birth,
+                    'role' => $this->role,
+                    'email' => $this->email,
+                    'telephone' => $this->telephone,
+                    'address' =>$this->address,
+                    'nationality' => $this->nationality,
+                ];
+                $sql = "UPDATE User SET
+                        login = :login ,
+                        first_name = :first_name ,
+                        last_name = :last_name ,
+                        date_of_birth = :date_of_birth ,
+                        role = :role ,
+                        email = :email,
+                        telephone = :telephone,
+                        address = :address,
+                        nationality = :nationality
+                        WHERE id = '$id'";
             }
             catch(Exception $e)
             {
@@ -290,6 +313,18 @@
             {
                 echo "Error : ".$e;
                 return false;
+            }
+        }
+        
+        public function updatePassword()
+        {
+            try
+            {
+                
+            }
+            catch(Exception $e)
+            {
+                
             }
         }
     }
