@@ -307,7 +307,9 @@
         {
             try
             {
-                //we can use the method getAll 
+                /*
+                 You should use foreach loop
+                 */
             }
             catch(Exception $e)
             {
@@ -316,11 +318,20 @@
             }
         }
         
-        public function updatePassword()
+        public function updatePassword($login)
         {
             try
             {
                 require_once('Connection_Chain.php');
+                $data =
+                [
+                    'password' => $this->login,
+                ];
+                $sql = "UPDATE User SET
+                        password = :password
+                        WHERE login = '$login'";
+                $stmt = $connection->con->prepare($sql);
+                $stmt->execute($data);
                 return true;
             }
             catch(Exception $e)
@@ -329,6 +340,18 @@
                 return false;
             }
         }
+        
+        //getAllJSON
+        public function getAllJSON()
+        {
+            try
+            {
+                return json_encode($this->getAll());
+            }
+            catch(Exception $e)
+            {
+                return null;
+            }
+        }
     }
-    
 ?>
