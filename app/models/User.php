@@ -320,11 +320,13 @@
         {
             try
             {
-                
+                require_once('Connection_Chain.php');
+                return true;
             }
             catch(Exception $e)
             {
-                
+                echo "Error : ".$e;
+                return false;
             }
         }
     }
