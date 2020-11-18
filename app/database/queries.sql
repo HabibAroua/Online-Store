@@ -39,4 +39,4 @@ create table User
     address varchar(60),
     nationality varchar(20),
     isActive int,
-)
+);

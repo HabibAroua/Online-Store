@@ -14,6 +14,7 @@
         private $address;
         private $nationality;
         private $isActive;
+        private $registration_date;
         
         public function __construct()
         {
@@ -152,6 +153,17 @@
             $this->isActive = $isActive;
         }
         
+        //registration_date
+        public function getRegistration_date()
+        {
+            return $this->registration_date;
+        }
+        
+        public function setRegistration_date($registration_date)
+        {
+            $this->registration_date = $registration_date;
+        }
+        
         public function add()
         {
             try
@@ -213,6 +225,7 @@
                     'telephone' => $this->telephone,
                     'address' =>$this->address,
                     'nationality' => $this->nationality,
+                    'registration_date' => $this->registration_date,
                 ];
                 $sql = "UPDATE User SET
                         login = :login ,
@@ -223,7 +236,8 @@
                         email = :email,
                         telephone = :telephone,
                         address = :address,
-                        nationality = :nationality
+                        nationality = :nationality,
+                        registration_date = :registration_date
                         WHERE id = '$id'";
             }
             catch(Exception $e)
@@ -257,6 +271,7 @@
                         'address' => $tab[9],
                         'nationality' => $tab[10],
                         'isActive' =>$tab[11],
+                        'registration_date'=>$tab[12]
                     );
                     $i++;
                 }
