@@ -16,7 +16,7 @@
         
         public function __construct()
         {
-            //fields
+            $this->user = new User();
         }
     }
 ?>
