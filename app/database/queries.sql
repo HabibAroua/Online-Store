@@ -23,7 +23,7 @@ create table Product
 );
 
 alter table Product add CONSTRAINT fk1 FOREIGN key (idCat) REFERENCES Category(id);
-//add reference is primary key 
+alter table Product add CONSTRAINT fk2 PRIMARY KEY(reference);
 
 create table User
 (
