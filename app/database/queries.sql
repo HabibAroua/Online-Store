@@ -25,13 +25,13 @@ create table Product
 alter table Product add CONSTRAINT fk1 FOREIGN key (idCat) REFERENCES Category(id);
 alter table Product add CONSTRAINT fk2 PRIMARY KEY(reference);
 
-create table User
+create table The_User
 (
     id int primary key,
     login varchar(50),
     password text,
     first_name varchar(30),
-    last_name varchar(30)
+    last_name varchar(30),
     date_of_birth date,
     role int,
     email varchar(40),
@@ -39,4 +39,5 @@ create table User
     address varchar(60),
     nationality varchar(20),
     isActive int,
+    registration_date date
 );
