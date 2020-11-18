@@ -1,6 +1,6 @@
 <?php
 
-    class User
+    class User //The name of this table is The_User
     {
         private $id;
         private $login;
@@ -183,7 +183,7 @@
                     'nationality' => $this->nationality,
                     'isActive' => $this->isActive,
                 ];
-                $sql = "INSERT INTO user (login, password, first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive)
+                $sql = "INSERT INTO The_User (login, password, first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive)
                         VALUES (:login, :password, :first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
@@ -227,7 +227,7 @@
                     'nationality' => $this->nationality,
                     'registration_date' => $this->registration_date,
                 ];
-                $sql = "UPDATE User SET
+                $sql = "UPDATE The_User SET
                         login = :login ,
                         first_name = :first_name ,
                         last_name = :last_name ,
@@ -253,7 +253,7 @@
             {
                 require_once('Connection_Chain.php');
                 $T = array();
-                $res = $connection->con->query("SELECT * from User");
+                $res = $connection->con->query("SELECT * from The_User");
                 $i = 0;
                 while($tab=$res->fetch(PDO::FETCH_NUM))
                 {
@@ -306,7 +306,7 @@
                 [
                     'isActive' => $this->isActive, // you should update teh field isActive to 1 (use setIsActive method)
                 ];
-                $sql = "UPDATE User SET isActive = :isActive WHERE id=$id";
+                $sql = "UPDATE The_User SET isActive = :isActive WHERE id=$id";
                 $stmt = $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -342,7 +342,7 @@
                 [
                     'password' => $this->login,
                 ];
-                $sql = "UPDATE User SET
+                $sql = "UPDATE The_User SET
                         password = :password
                         WHERE login = '$login'";
                 $stmt = $connection->con->prepare($sql);
