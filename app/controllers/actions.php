@@ -3,8 +3,10 @@
     //require_once('../database/Connection.php');
     require_once('../models/Category.php');
     require_once('../models/Product.php');
+    require_once('../models/User.php');
     require_once('CategoryController.php');
     require_once('ProductController.php');
+    require_once('UserController.php');
     
     //action function of each class
     
@@ -95,15 +97,34 @@
         }
     }
     
+    function User($action)
+    {
+        $user = new User();
+        switch($action)
+        {
+            case 'insert' : echo "insert new User";
+            break;
+            case 'update' : echo "Update User";
+            break;
+            case 'delete' : echo "Delete";
+            break;
+            case 'getAll' : echo "Get all";
+            break;
+        }
+        
+    }
+    
     if(isset($_GET['class']))
     {
-        if($_GET['action'])
+        if(isset($_GET['action']))
         {
             switch($_GET['class'])
             {
                 case 'Category' : Category($_GET['action'],$categoryController);
                 break;
                 case 'Product' : Product($_GET['action']);
+                break;
+                case 'User' : User($_GET['action']);
                 break;
             }
         }
