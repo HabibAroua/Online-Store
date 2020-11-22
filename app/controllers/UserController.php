@@ -19,4 +19,5 @@
             $this->user = new User();
         }
     }
+    
 ?>
