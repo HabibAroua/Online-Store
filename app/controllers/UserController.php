@@ -18,6 +18,30 @@
         {
             $this->user = new User();
         }
+        
+        public function insert()
+        {
+            if($user->insert())
+            {
+                echo "{'response' : 'Good'}";
+            }
+            else
+            {
+                echo "{'response' : 'Bad'}";
+            }
+        }
+        
+        public function update()
+        {
+            if($user->update())
+            {
+                echo "{'response' : 'Good'}";
+            }
+            else
+            {
+                echo "{'response' : 'Bad'}";
+            }
+        }
     }
     
 ?>
