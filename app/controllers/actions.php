@@ -102,7 +102,16 @@
         $user = new User();
         switch($action)
         {
-            case 'insert' : echo "insert new User";
+            case 'insert' : if
+                            (
+                                (isset($_POST['login'])) && (isset($_POST['password'])) && (isset($_POST['first_name']))
+                                (isset($_POST['last_name'])) && (isset($_POST['date_of_birth'])) && (isset($_POST['email']))
+                                (isset($_POST['telephone'])) && (isset($_POST['address'])) && (isset($_POST['address'])) &&
+                                (isset($_POST['address']))
+                            )
+                            {
+                                
+                            }
             break;
             case 'update' : echo "Update User";
             break;

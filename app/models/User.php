@@ -19,6 +19,7 @@
         public function __construct()
         {
             $this->isActive = 0; // The user's account is initially deactivated
+            $this->registration_date = date('Y-m-d');
         }
         
         //id
