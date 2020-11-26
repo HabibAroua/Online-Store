@@ -9,6 +9,8 @@
     require_once('UserController.php');
     
     //action function of each class
+    
+    //Class Category
     function Category($action,$c)
     {
         $cat = new Category();
@@ -36,6 +38,7 @@
         }
     }
     
+    //Class Product
     function Product($action)
     {
         $p = new Product();
@@ -96,6 +99,7 @@
         }
     }
     
+    //Class User
     function User($action)
     {
         $user = new User();
@@ -141,7 +145,6 @@
         }
         
     }
-    
     if(isset($_GET['class']))
     {
         if(isset($_GET['action']))
@@ -165,5 +168,4 @@
     {
         echo "Please enter Class name";
     }
-
 ?>
