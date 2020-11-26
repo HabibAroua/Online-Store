@@ -137,7 +137,7 @@
             break;
             case 'delete' : echo "Delete";
             break;
-            case 'getAll' : echo "Get all";
+            case 'getAll' : echo $userController->getAllJSON();
             break;
         }
         

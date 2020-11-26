@@ -33,7 +33,7 @@
         
         public function update()
         {
-            if($user->update())
+            if($this->user->update())
             {
                 echo "{'response' : 'Good'}";
             }
@@ -41,6 +41,11 @@
             {
                 echo "{'response' : 'Bad'}";
             }
+        }
+        
+        public function getAllJSON()
+        {
+            return $this->user->getAllJSON();
         }
     }
     
