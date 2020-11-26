@@ -19,7 +19,8 @@
         public function __construct()
         {
             $this->isActive = 0; // The user's account is initially deactivated
-            $this->registration_date = date('Y-m-d');
+            $this->registration_date = date('Y-m-d'); //date of system
+            $this->role = 1; //the user is by default is client
         }
         
         //id
@@ -165,7 +166,7 @@
             $this->registration_date = $registration_date;
         }
         
-        public function add()
+        public function insert()
         {
             try
             {
@@ -183,9 +184,10 @@
                     'address' =>$this->address,
                     'nationality' => $this->nationality,
                     'isActive' => $this->isActive,
+                    'registration_date' => $this->registration_date
                 ];
-                $sql = "INSERT INTO The_User (login, password, first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive)
-                        VALUES (:login, :password, :first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive)";
+                $sql = "INSERT INTO The_User (login, password, first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive, registration_date)
+                        VALUES (:login, :password, :first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive, :registration_date)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;

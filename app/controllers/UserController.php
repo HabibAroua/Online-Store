@@ -21,7 +21,7 @@
         
         public function insert()
         {
-            if($user->insert())
+            if($this->user->insert())
             {
                 echo "{'response' : 'Good'}";
             }

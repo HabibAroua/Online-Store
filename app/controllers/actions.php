@@ -100,17 +100,37 @@
     function User($action)
     {
         $user = new User();
+        $userController = new UserController();
         switch($action)
         {
             case 'insert' : if
                             (
-                                (isset($_POST['login'])) && (isset($_POST['password'])) && (isset($_POST['first_name']))
-                                (isset($_POST['last_name'])) && (isset($_POST['date_of_birth'])) && (isset($_POST['email']))
-                                (isset($_POST['telephone'])) && (isset($_POST['address'])) && (isset($_POST['address'])) &&
-                                (isset($_POST['address']))
+                                (isset($_POST['login'])) &&
+                                (isset($_POST['password'])) &&
+                                (isset($_POST['first_name'])) &&
+                                (isset($_POST['last_name'])) &&
+                                (isset($_POST['date_of_birth'])) &&
+                                (isset($_POST['email'])) &&
+                                (isset($_POST['telephone']))&&
+                                (isset($_POST['address'])) &&
+                                (isset($_POST['nationality']))
                             )
                             {
-                                
+                                $user->setLogin($_POST['login']);
+                                $user->setPassword($_POST['password']);
+                                $user->setFirst_name($_POST['first_name']);
+                                $user->setLast_name($_POST['last_name']);
+                                $user->setDate_of_birth($_POST['date_of_birth']);
+                                $user->setEmail($_POST['email']);
+                                $user->setTelephone($_POST['telephone']);
+                                $user->setAddress($_POST['address']);
+                                $user->setNationality($_POST['nationality']);
+                                $userController->setUser($user);
+                                $userController->insert();
+                            }
+                            else
+                            {
+                                echo "There are 9 POST !!";
                             }
             break;
             case 'update' : echo "Update User";

@@ -27,7 +27,7 @@ alter table Product add CONSTRAINT fk2 PRIMARY KEY(reference);
 
 create table The_User
 (
-    id int primary key,
+    id int primary key AUTO_INCREMENT,
     login varchar(50),
     password text,
     first_name varchar(30),
