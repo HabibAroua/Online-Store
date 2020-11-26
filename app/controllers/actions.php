@@ -9,7 +9,6 @@
     require_once('UserController.php');
     
     //action function of each class
-    
     function Category($action,$c)
     {
         $cat = new Category();
