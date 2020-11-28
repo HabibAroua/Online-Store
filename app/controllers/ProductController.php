@@ -30,11 +30,11 @@
         {
             if($this->product->update($ref))
             {
-                echo "{response : good}";
+                echo "{'response' : 'good'}";
             }
             else
             {
-                echo "{response : bad}";
+                echo "{'response' : 'bad'}";
             }
         }
         
@@ -42,11 +42,11 @@
         {
             if($this->product->delete())
             {
-                echo "{response : good}";
+                echo "{'response' : 'good'}";
             }
             else
             {
-                echo "{response : bad}";
+                echo "{'response' : 'bad'}";
             }
         }
         

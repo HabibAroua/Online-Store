@@ -18,11 +18,11 @@
         {
             if ($this->category->insert())
             {
-                echo "{response : Good}";
+                echo "{'response' : 'Good'}";
             }
             else
             {
-                echo "{response : Bad}";
+                echo "{'response' : 'Bad'}";
             }
         }
         
@@ -30,11 +30,11 @@
         {
             if($this->category->delete())
             {
-                echo "{response : Good}";
+                echo "{'response' : 'Good'}";
             }
             else
             {
-                echo "{response : Bad}";
+                echo "{'response' : 'Bad'}";
             }
         }
         
@@ -42,17 +42,17 @@
         {
             if($this->category->update())
             {
-                echo "{response : Good}";
+                echo "{'response' : 'Good'}";
             }
             else
             {
-                echo "{response : Bad}";
+                echo "{'response' : 'Bad'}";
             }
         }
         
         public function getAll()
         {
-            return 'Array()';
+            return $this->category->getAll();
         }
         
         public function getAllJSON()
