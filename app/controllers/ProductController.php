@@ -52,12 +52,12 @@
         
         public function getAll()
         {
-            
+            return $this->product->getAll();
         }
         
         public function getAllJSON()
         {
-            
+            return json_decode($this->getAll());
         }
     }
 ?>

@@ -94,7 +94,7 @@
                                 echo "Error : there are 8 inputs !!";
                             }
             break;
-            case 'getAll' :
+            case 'getAll' : echo $productCpntroller->getAllJSON();
             break;
         }
     }
