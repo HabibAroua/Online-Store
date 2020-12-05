@@ -7,6 +7,7 @@
     require_once('CategoryController.php');
     require_once('ProductController.php');
     require_once('UserController.php');
+    require_once('../security/hash.php');
     
     //action function of each class
     
