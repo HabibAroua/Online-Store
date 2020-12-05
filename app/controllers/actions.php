@@ -46,9 +46,16 @@
         $productCpntroller = new ProductController();
         switch($action)
         {
-            case 'insert' : if((isset($_POST['reference'])) && (isset($_POST['label'])) && (isset($_POST['price']))
-                                && (isset($_POST['amount'])) && (isset($_POST['picture'])) && (isset($_POST['description']))
-                                && (isset($_POST['idCat'])))
+            case 'insert' : if
+                                (
+                                    (isset($_POST['reference'])) &&
+                                    (isset($_POST['label'])) &&
+                                    (isset($_POST['price']))&&
+                                    (isset($_POST['amount'])) &&
+                                    (isset($_POST['picture'])) &&
+                                    (isset($_POST['description']))&&
+                                    (isset($_POST['idCat']))
+                                )
                             {
                                 $p->setReference($_POST['reference']);
                                 $p->setLabel($_POST['label']);
@@ -121,7 +128,13 @@
                             )
                             {
                                 $user->setLogin($_POST['login']);
-                                $user->setPassword($_POST['password']);
+                                //hash the password
+                                require_once('../security/hash.php');
+                                $h =new Hash();
+                                $h->setWord($_POST['password']);
+                                $h->hashWord();
+                                //***************************************
+                                $user->setPassword($h->getHashed_password());
                                 $user->setFirst_name($_POST['first_name']);
                                 $user->setLast_name($_POST['last_name']);
                                 $user->setDate_of_birth($_POST['date_of_birth']);

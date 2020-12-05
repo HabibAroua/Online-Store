@@ -28,7 +28,7 @@
         
         public function hashWord()
         {
-            return password_hash($this->word, PASSWORD_DEFAULT);
+            $this->setHashed_password(password_hash($this->word, PASSWORD_DEFAULT));
         }
         
         public function verify()
