@@ -1,5 +1,5 @@
 <?php
-
+    require_once('Connection_Chain.php');
     class User //The name of this table is The_User
     {
         private $id;
@@ -21,6 +21,12 @@
             $this->isActive = 0; // The user's account is initially deactivated
             $this->registration_date = date('Y-m-d'); //date of system
             $this->role = 1; //the user is by default is client
+        }
+        
+        public function getDataBase()
+        {
+            require_once('Connection_Chain.php');
+            //return $connection;
         }
         
         //id
@@ -170,7 +176,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'login' => $this->login,
@@ -216,7 +222,6 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
                 $data =
                 [
                     'login' => $this->login,
@@ -254,7 +259,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $T = array();
                 $res = $connection->con->query("SELECT * from The_User");
                 $i = 0;
@@ -319,6 +324,20 @@
                 echo "Error : ".$e;
                 return false;
             }
+        }
+        
+        public function isEmailExist()
+        {
+            $test = false;
+            foreach($this->getAll() as $v )
+            {
+                if($v{'email'} == $this->email)
+                {
+                    $test = true;
+                    break;
+                }
+            }
+            return $test;
         }
         
         public function validateLoginAndPassword()

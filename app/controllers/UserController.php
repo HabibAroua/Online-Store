@@ -23,11 +23,11 @@
         {
             if($this->user->insert())
             {
-                echo "{'response' : 'Good'}";
+                return "{'response' : 'Good'}";
             }
             else
             {
-                echo "{'response' : 'Bad'}";
+                return "{'response' : 'Bad'}";
             }
         }
         
@@ -46,6 +46,17 @@
         public function getAllJSON()
         {
             return $this->user->getAllJSON();
+        }
+        
+        public function isEmailExist()
+        {
+            $test = false;
+            if ($this->user->isEmailExist() == true)
+            {
+                echo "{'response' : 'Email is exist'}";
+                $test = true;
+            }
+            return $test;
         }
     }
     

@@ -143,7 +143,15 @@
                                 $user->setAddress($_POST['address']);
                                 $user->setNationality($_POST['nationality']);
                                 $userController->setUser($user);
-                                $userController->insert();
+                                if($userController->isEmailExist() == true)
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    echo $userController->insert();
+                                }
+                                
                             }
                             else
                             {
