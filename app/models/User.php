@@ -296,7 +296,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
             }
             catch(Exception $e)
             {
@@ -309,7 +309,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'isActive' => $this->isActive, // you should update teh field isActive to 1 (use setIsActive method)
@@ -359,7 +359,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'password' => $this->login,
