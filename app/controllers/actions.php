@@ -26,6 +26,7 @@
             case 'delete' : $cat->setId($_POST['id']);
                             $c->setCategory($cat);
                             $c->delete();
+            break;
             case 'update' : $cat->setId($_POST['id']);
                             $cat->setName($_POST['name']);
                             $cat->setDescription($_POST['description']);

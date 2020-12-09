@@ -1,5 +1,6 @@
 <?php
 
+    require_once('Connection_Chain.php');
     class Category
     {
         private $id;
@@ -49,7 +50,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $T = array();
                 $res = $connection->con->query("SELECT * from Product where idCat = $id");
                 $i = 0;
@@ -80,7 +81,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'name' => $this->name,
@@ -103,7 +104,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'id' => $this->id,
@@ -125,7 +126,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'id' => $this->id,
@@ -133,7 +134,6 @@
                     'description' => $this->description,
                 ];
                 $sql = "UPDATE Category SET name = :name , description = :description WHERE id = :id";
-                echo $sql;
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -150,7 +150,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $T = array();
                 $res = $connection->con->query("SELECT * from Category");
                 $i = 0;
