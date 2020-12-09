@@ -57,7 +57,7 @@
         
         public function getAllJSON()
         {
-            return json_decode($this->getAll());
+            return $this->product->getAllJSON();
         }
     }
 ?>

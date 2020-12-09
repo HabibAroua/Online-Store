@@ -1,5 +1,6 @@
 <?php
 
+    require_once('Connection_Chain.php');
     class Product
     {
         private $reference;
@@ -92,7 +93,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'reference' => $this->reference,
@@ -121,7 +122,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'reference' => $this->reference,
@@ -143,7 +144,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $data =
                 [
                     'reference' => $this->reference,
@@ -177,7 +178,7 @@
         {
             try
             {
-                require_once('Connection_Chain.php');
+                global $connection;
                 $T = array();
                 $res = $connection->con->query("SELECT * from Product");
                 $i = 0;
