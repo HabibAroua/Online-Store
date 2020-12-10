@@ -186,5 +186,36 @@
                 return null;
             }
         }
+        
+        //get Product by Category
+        public function getProductByCategory()
+        {
+            try
+            {
+                global $connection;
+                $T = array();
+                $res = $connection->con->query("SELECT * from Product where Product.idCat=".$this->id);
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (
+                        'reference'=>$tab[0],
+                        'label'=>$tab[1],
+                        'price'=>$tab[2],
+                        'amount' => $tab[3],
+                        'picture' => $tab[4],
+                        'description'=> $tab[5],
+                    );
+                    $i++;
+                }
+                return $T;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return false;
+            }
+        }
     }
 ?>

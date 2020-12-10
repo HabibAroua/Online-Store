@@ -35,6 +35,10 @@
             break;
             case 'getAll' : echo $c->getAllJSON();
             break;
+            case 'getProductByCategory' :   $cat->setId(2);
+                                            $c->setCategory($cat);
+                                            echo $c->getProductByCategoryJSON();
+            break;
             default : echo "Error, plase enter the right parameters";
             break;
         }

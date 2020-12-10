@@ -59,6 +59,16 @@
         {
             return $this->category->getAllJSON();
         }
+        
+        public function getProductByCategory()
+        {
+            return $this->category->getProductByCategory();
+        }
+        
+        public function getProductByCategoryJSON()
+        {
+            return json_encode($this->category->getProductByCategory());
+        }
     }
     
     $categoryController = new CategoryController();
