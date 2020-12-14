@@ -127,4 +127,17 @@
             return $this->mail->send();
         }
     }
+    
+    $e =new Email('HabibAroua','habibha.aroua82@gmail.com','Hello world','I love you bitch');
+    $e->mySettings('habib.aroua@sesame.com.tn','habib.aroua@hotmail.framour88');
+    $e->SMTP_Settings('smtp.gmail.com',465);
+    $e->Email_Settings();
+    if($e->send())
+    {
+        echo "Sent";
+    }
+    else
+    {
+        echo "Error";
+    }
 ?>
