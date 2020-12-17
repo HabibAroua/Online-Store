@@ -1,10 +1,11 @@
 <?php
+/*
     $con = mysqli_connect("localhost","root","","right1");
     if(mysqli_connect_errno())
     {
         echo "faild to connect",mysqli_connect_errno();
     }
-    
+*/    
     $fname = "";
     $lname = "";
     $em = "";
@@ -44,6 +45,15 @@
         else
         {
             echo "<script>alert('Email are not matched');</script>";
+        }
+        
+        if($password == $password2)
+        {
+            echo "<script>alert('Password are matched');</script>";
+        }
+        else
+        {
+            echo "<script>alert('Passwords are not matched');</script>";
         }
     }
 
