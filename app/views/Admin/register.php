@@ -2,7 +2,7 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100 p-t-90 p-b-30">
-			<form class="login100-form validate-form">
+			<!--<form class="login100-form validate-form"> -->
 				<span class="login100-form-title p-b-40">
 					Register
 				</span>	
@@ -33,7 +33,7 @@
 					<span class="focus-input100"></span>
 				</div>
                 <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your login">
-					<input class="input100" type="text" name="login" placeholder="Login">
+					<input class="input100" type="text" id="login" name="login" placeholder="Login">
 					<span class="focus-input100"></span>
 				</div>
                 <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your birth date">
@@ -80,7 +80,49 @@
 						Login
                     </button>
 				</div>
-			</form>
+				<div class="flex-col-c p-t-224">
+					<span class="txt2 p-b-10">
+						If you have an account
+					</span>
+	
+					<a href="?page=login" class="txt3 bo1 hov1">
+						Sign in
+					</a>
+				</div>
+			<!--</form> -->
 		</div>
 	</div>
 </div>
+
+<script>
+	function test()
+	{
+		var login = $('#login').val();
+		$.ajax
+		(
+			{
+				type: 'POST',
+				url: "Test.php",
+				data: {'login': login},
+				success: 
+				function(result)
+				{
+					alert(result);
+				}
+			}
+		);
+	}
+	$(document).ready
+	(
+		function()
+		{
+			$("button").click
+			(
+				function()
+				{
+					test();
+				}
+			);
+		}
+	);
+</script>

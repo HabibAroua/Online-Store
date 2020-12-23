@@ -81,12 +81,13 @@
 		<!--===============================================================================================-->
 		<script src="js/main.js"></script>
 		<script>
-			//var json ='{"name" : "Habib" , "age" : 26 }';
-			//sessionStorage.setItem("user",json);
+			var json ='{"name" : "Habib" , "age" : 26 }';
+			localStorage.setItem("user",json);
 			//const obj = JSON.stringify(user);
 			//console.log(user.name);
 			console.log(JSON.parse(sessionStorage.getItem("user")));
 			//sessionStorage.clear();
+			alert("Hello world");
 		</script>
 	</body>
 </html>
