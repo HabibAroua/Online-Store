@@ -75,6 +75,7 @@
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
 <script>
+	/*
 	var json ='{"name" : "Habib" , "age" : 26 }';
 	localStorage.setItem("user",json);
 	//const obj = JSON.stringify(user);
@@ -83,4 +84,5 @@
 	//sessionStorage.clear();
 	//localStorage.removeItem("user");
 	alert(JSON.parse(localStorage.getItem("user")).name);
+	*/
 </script>

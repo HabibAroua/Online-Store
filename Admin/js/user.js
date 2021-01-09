@@ -1,16 +1,16 @@
 class User
 {
-    constructor()
+    constructor(login, password,first_name,last_name,date_of_birth,email,telephone,address,nationality)
     {
-        this.login = "";
-        this.password = "";
-        this.first_name = "";
-        this.last_name = "";
-        this.date_of_birth = "";
-        this.email = "";
-        this.telephone = "";
-        this.address = "";
-        this.nationality = "";
+        this.login = login;
+        this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.date_of_birth = date_of_birth;
+        this.email = email;
+        this.telephone = telephone;
+        this.address = address;
+        this.nationality = nationality;
     }
     
     //login
@@ -69,7 +69,31 @@ class User
     
     insert()
     {
-        
+        $.ajax
+			(
+				{
+					type: 'POST',
+					url: "Test.php",
+					data:
+					{
+						'first_name' : this.first_name,
+						'last_name' : this.last_name,
+						'login': this.login,
+						'birth_date' : this.birth_date,
+						'email' : this.email,
+						'telephone' : this.telephone,
+						'address' : this.address,
+						'nationality' : this.nationality,
+						'password' : this.password
+						
+					},
+					success: 
+					function(result)
+					{
+						alert(result);
+					}
+				}
+			);
     }
     
     loginIsExist()
