@@ -125,21 +125,27 @@ class User
     
     emailIsExist()
     {
-        $.ajax
-			(
-				{
-					type: 'POST',
-					url: "Test.php",
-					data:
-					{
-						'email': this.email,						
-					},
-					success: 
-					function(result)
-					{
-						alert(result);
-					}
-				}
-			);
+        var res = null;
+        var email = this.email;
+           function call_ajax()
+            {
+                return $.ajax
+                (
+                    {
+                        async: false, //if you want to change a global variable you should add this instruction
+                        url : 'http://localhost/Online-Store/app/controllers/actions.php?class=User&action=emailIsExist',
+                        type : 'POST',
+                        data: {'email' : email}
+                    }
+                );
+            }
+            call_ajax().done
+            (
+                function(response)
+                {
+                    res = response;
+                }
+            );
+           console.log(res);
     }
 }
