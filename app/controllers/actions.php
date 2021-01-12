@@ -156,7 +156,7 @@
                             }
                             else
                             {
-                                echo "There are 9 POST !!";
+                                echo "There are 9 POSTS !!";
                             }
             break;
             case 'update' : echo "Update User";
@@ -164,6 +164,28 @@
             case 'delete' : echo "Delete";
             break;
             case 'getAll' : echo $userController->getAllJSON();
+            break;
+            case  'emailIsExist' :  if(isset($_POST['email']))
+                                    {
+                                        $user->setEmail($_POST['email']);
+                                        $userController->setUser($user);
+                                        echo $userController->isEmailExist();
+                                    }
+                                    else
+                                    {
+                                        echo "There is one POST";
+                                    }
+            break;
+            case 'loginIsExist' : if(isset($_POST['login']))
+                                    {
+                                        $user->setLogin($_POST['login']);
+                                        $userController->setUser($user);
+                                        echo $userController->isLoginExist();
+                                    }
+                                    else
+                                    {
+                                        echo "There is one POST";
+                                    }
             break;
         }
         

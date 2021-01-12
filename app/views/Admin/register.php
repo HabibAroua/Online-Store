@@ -38,7 +38,7 @@
 					<span class="focus-input100"></span>
 				</div>
                 <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your birth date">
-					<input class="input100" type="date" name="birth_date" placeholder="Birth date" id="birth_date">
+					<input class="input100" type="date" name="birth_date" placeholder="Birth date" min="1940-12-31" max="1999-12-31" id="birth_date">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email: ex@abc.xyz">
@@ -100,13 +100,15 @@
 		var first_name = $('#first_name').val();
 		var last_name = $('#last_name').val();
 		var login = $('#login').val();
-		var birth_date = $('#birth_date').val();
+		var date_of_birth = $('#birth_date').val();
 		var email = $('#email').val();
 		var telephone = $('#telephone').val();
 		var address = $('#address').val();
-		var country = $('#country').val();
+		var country = $('#country').val(); // is nationality in the database
 		var password = $('#confirm_password').val();
 		var confirm_password = $('#confirm_password').val();
+		var user = new User(login, password,first_name,last_name,date_of_birth,email,telephone,address,country);
+		user.loginIsExist();
 		if(first_name === "")
 		{
 			$("#first_name").focus();
@@ -175,6 +177,14 @@
 												$('#confirm_password').focus();
 												alertify.error('You should confirm your password');
 											}
+											else
+											{
+												if(password != confirm_password)
+												{
+													$('#confirm_password').focus();
+													alertify.error('Password and Confirm password are not identical');
+												}
+											}
 										}
 									}
 								}
@@ -185,6 +195,7 @@
 			}
 		}
 	}
+	
 	$(document).ready
 	(
 		function()

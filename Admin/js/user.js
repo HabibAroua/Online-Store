@@ -11,6 +11,7 @@ class User
         this.telephone = telephone;
         this.address = address;
         this.nationality = nationality;
+        this.result = "";
     }
     
     //login
@@ -98,6 +99,47 @@ class User
     
     loginIsExist()
     {
-        
+        var res = null;
+        var login = this.login;
+           function call_ajax()
+            {
+                return $.ajax
+                (
+                    {
+                        async: false, //if you want to change a global variable you should add this instruction
+                        url : 'http://localhost/Online-Store/app/controllers/actions.php?class=User&action=loginIsExist',
+                        type : 'POST',
+                        data: {'login' : login}                
+                    }
+                );
+            }
+            call_ajax().done
+            (
+                function(response)
+                {
+                    res = response;
+                }
+            );
+           console.log(res);
+    }
+    
+    emailIsExist()
+    {
+        $.ajax
+			(
+				{
+					type: 'POST',
+					url: "Test.php",
+					data:
+					{
+						'email': this.email,						
+					},
+					success: 
+					function(result)
+					{
+						alert(result);
+					}
+				}
+			);
     }
 }

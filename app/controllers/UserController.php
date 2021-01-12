@@ -50,13 +50,26 @@
         
         public function isEmailExist()
         {
-            $test = false;
-            if ($this->user->isEmailExist() == true)
+            if($this->user->isEmailExist() == true)
             {
-                echo "{'response' : 'Email is exist'}";
-                $test = true;
+                return "{'response' : 'Email is exist'}";
             }
-            return $test;
+            else
+            {
+                return "{'response' : 'Email is not exist'}";
+            }
+        }
+        
+        public function isLoginExist()
+        {
+            if($this->user->isLoginExist() == true)
+            {
+                return "{'response' : 'Login is exist'}";
+            }
+            else
+            {
+                return "{'response' : 'Login is not exist'}";
+            }
         }
         
         public function sendEmail($email,$first_name)

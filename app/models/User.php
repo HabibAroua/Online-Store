@@ -340,6 +340,20 @@
             return $test;
         }
         
+        public function isLoginExist()
+        {
+            $test = false;
+            foreach($this->getAll() as $v )
+            {
+                if($v{'login'} == $this->login)
+                {
+                    $test = true;
+                    break;
+                }
+            }
+            return $test;
+        }
+        
         public function validateLoginAndPassword()
         {
             try
