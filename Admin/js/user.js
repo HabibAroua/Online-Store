@@ -70,31 +70,42 @@ class User
     
     insert()
     {
+        var res = null;
         $.ajax
 			(
 				{
+                    async: false, //if you want to change a global variable you should add this instruction
 					type: 'POST',
-					url: "Test.php",
+					url: "http://localhost/Online-Store/app/controllers/actions.php?class=User&action=insert",
 					data:
 					{
-						'first_name' : this.first_name,
+						'login' : this.login,
+						'password' : this.password,
+						'first_name': this.first_name,
 						'last_name' : this.last_name,
-						'login': this.login,
-						'birth_date' : this.birth_date,
+						'date_of_birth' : this.date_of_birth,
 						'email' : this.email,
 						'telephone' : this.telephone,
 						'address' : this.address,
-						'nationality' : this.nationality,
-						'password' : this.password
+						'nationality' : this.nationality
 						
 					},
 					success: 
 					function(result)
 					{
-						alert(result);
+						res = result;
 					}
 				}
 			);
+        console.log("the result is "+res);
+        if(JSON.parse(res).response === "Good")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     loginIsExist()
@@ -120,7 +131,15 @@ class User
                     res = response;
                 }
             );
-           console.log(res);
+           console.log(JSON.parse(res).response);
+           if(JSON.parse(res).response === "Login is exist")
+           {
+                return true;
+           }
+           else
+           {
+                return false;
+           }
     }
     
     emailIsExist()
@@ -146,6 +165,14 @@ class User
                     res = response;
                 }
             );
-           console.log(res);
+            console.log(JSON.parse(res).response);
+           if(JSON.parse(res).response === "Email is exist")
+           {
+                return true;
+           }
+           else
+           {
+                return false;
+           }
     }
 }

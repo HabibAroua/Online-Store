@@ -21,14 +21,16 @@
         
         public function insert()
         {
+            $response = "";
             if($this->user->insert())
             {
-                return "{'response' : 'Good'}";
+                $response = "Good";
             }
             else
             {
-                return "{'response' : 'Bad'}";
+                $response = "Bad";
             }
+            return json_encode(array('response'=> $response));
         }
         
         public function update()
@@ -50,26 +52,30 @@
         
         public function isEmailExist()
         {
+            $response = "";
             if($this->user->isEmailExist() == true)
             {
-                return "{'response' : 'Email is exist'}";
+                $response = "Email is exist";
             }
             else
             {
-                return "{'response' : 'Email is not exist'}";
+                $response = "Email is not exist";
             }
+            return json_encode(array('response'=> $response));
         }
         
         public function isLoginExist()
         {
+            $response = "";
             if($this->user->isLoginExist() == true)
             {
-                return "{'response' : 'Login is exist'}";
+                $response = "Login is not exist";
             }
             else
             {
-                return "{'response' : 'Login is not exist'}";
+                $response = "Login is not exist";
             }
+            return json_encode(array('response'=> $response));
         }
         
         public function sendEmail($email,$first_name)

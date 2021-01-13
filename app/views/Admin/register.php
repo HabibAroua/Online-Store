@@ -108,7 +108,6 @@
 		var password = $('#confirm_password').val();
 		var confirm_password = $('#confirm_password').val();
 		var user = new User(login, password,first_name,last_name,date_of_birth,email,telephone,address,country);
-		user.loginIsExist();
 		if(first_name === "")
 		{
 			$("#first_name").focus();
@@ -183,6 +182,35 @@
 												{
 													$('#confirm_password').focus();
 													alertify.error('Password and Confirm password are not identical');
+												}
+												else
+												{
+													if(user.loginIsExist())
+													{
+														document.getElementById("login").value = "";
+														alertify.error("Login is exist");
+														$("#login").focus();
+													}
+													else
+													{
+														if(user.emailIsExist())
+														{
+															document.getElementById("email").value = "";
+															alertify.error("Email is exist");
+															$("#email").focus();
+														}
+														else
+														{
+															if(user.insert())
+															{
+																alertify.success('Congratulation ! Your registration is successful');	
+															}
+															else
+															{
+																alertify.error("If you have a problem with registration you may contact technical service");	
+															}
+														}
+													}
 												}
 											}
 										}
