@@ -354,19 +354,32 @@
             return $test;
         }
         
-        public function validateLoginAndPassword()
+        public function findPasswordByEmail($email)
         {
-            try
+            $password = "";
+            foreach($this->getAll() as $v )
             {
-                /*
-                 You should use foreach loop
-                 */
+                if($v{'email'} == $email)
+                {
+                    $password = $v{'password'};
+                    break;
+                }
             }
-            catch(Exception $e)
+            return $password;
+        }
+        
+        public function findPasswordByLogin($login)
+        {
+            $password = "";
+            foreach($this->getAll() as $v )
             {
-                echo "Error : ".$e;
-                return false;
+                if($v{'login'} == $login)
+                {
+                    $password = $v{'password'};
+                    break;
+                }
             }
+            return $password;
         }
         
         public function updatePassword($login)

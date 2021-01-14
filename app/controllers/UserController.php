@@ -96,6 +96,16 @@
             $e->Email_Settings();
             return ($e->send());
         }
+        
+        public function findPasswordByEmail($email)
+        {
+            return $this->user->findPasswordByEmail($email);
+        }
+        
+        public function findPasswordByLogin($login)
+        {
+            return $this->user->findPasswordByLogin($login);
+        }
     }
     
 ?>

@@ -187,8 +187,49 @@
                                         echo "There is one POST";
                                     }
             break;
+            case 'sign_in_by_login' :   if($_POST['login'])
+                                        {
+                                            //echo $userController->findPasswordByLogin($_POST['login']);
+                                            $h =new Hash();
+                                            $h->setWord("azerty");
+                                            $h->setHashed_password($userController->findPasswordByLogin($_POST['login']));
+                                            $test = $h->verify();
+                                            if($test == true)
+                                            {
+                                                echo "good";
+                                            }
+                                            else
+                                            {
+                                                echo "bad";
+                                            }
+                                        }
+                                        else
+                                        {
+                                            echo "You should enter a POST";
+                                        }
+            break;
+            case 'sign_in_by_email':    if($_POST['email'])
+                                        {
+                                            //echo $userController->findPasswordByLogin($_POST['login']);
+                                            $h =new Hash();
+                                            $h->setWord("azereety");
+                                            $h->setHashed_password($userController->findPasswordByEmail($_POST['email']));
+                                            $test = $h->verify();
+                                            if($test == true)
+                                            {
+                                                echo "good";
+                                            }
+                                            else
+                                            {
+                                                echo "bad";
+                                            }
+                                        }
+                                        else
+                                        {
+                                            echo "You should enter a POST";
+                                        }
+            break;
         }
-        
     }
     if(isset($_GET['class']))
     {
@@ -213,5 +254,5 @@
     {
         echo "Please enter Class name";
     }
-    
+        
 ?>
