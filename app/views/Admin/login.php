@@ -1,3 +1,4 @@
+<script src="/Online-Store/Admin/js/user.js"></script>
 <title>Login</title>
 <div class="limiter">
 	<div class="container-login100">
@@ -26,7 +27,7 @@
 				</div>
 	
 				<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email: ex@abc.xyz">
-					<input class="input100" type="text" name="email" placeholder="Email or Login">
+					<input class="input100" type="text" name="email" placeholder="Email or Login" id="login">
 					<span class="focus-input100"></span>
 				</div>
 	
@@ -34,7 +35,7 @@
 					<span class="btn-show-pass">
 						<i class="fa fa fa-eye"></i>
 					</span>
-					<input class="input100" type="password" name="pass" placeholder="Password">
+					<input class="input100" type="password" id="password"  name="pass" placeholder="Password">
 					<span class="focus-input100"></span>
 				</div>
 	
@@ -68,21 +69,24 @@
 <!--===============================================================================================-->
 <script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.jers"></script>
-<script src="vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
+
+<script src="/Online-Store/Admin/js/Operation.js"></script>
 <script>
-	/*
-	var json ='{"name" : "Habib" , "age" : 26 }';
-	localStorage.setItem("user",json);
-	//const obj = JSON.stringify(user);
-	//console.log(user.name);
-	//console.log(JSON.parse(localStorage.getItem("user")));
-	//sessionStorage.clear();
-	//localStorage.removeItem("user");
-	alert(JSON.parse(localStorage.getItem("user")).name);
-	*/
+	$(document).ready
+	(
+		function()
+		{
+			$("button").click
+			(
+				function()
+				{
+					authentication();
+				}
+			);
+		}
+	);
 </script>

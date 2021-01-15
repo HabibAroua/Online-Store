@@ -2,22 +2,38 @@ class User
 {
     constructor(login, password,first_name,last_name,date_of_birth,email,telephone,address,nationality)
     {
-        this.login = login;
-        this.password = password;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.date_of_birth = date_of_birth;
-        this.email = email;
-        this.telephone = telephone;
-        this.address = address;
-        this.nationality = nationality;
-        this.result = "";
+        if(arguments.length == 9)
+        {
+            this.login = login;
+            this.password = password;
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.date_of_birth = date_of_birth;
+            this.email = email;
+            this.telephone = telephone;
+            this.address = address;
+            this.nationality = nationality;
+        }
+        else
+        {
+            if (arguments.length == 2)
+            {
+                this.login = login;
+                this.password = password;
+            }
+        }
     }
+    
     
     //login
     setLogin(login)
     {
         this.login = login;
+    }
+    
+    getLogin()
+    {
+        return this.login ;
     }
     
     //password

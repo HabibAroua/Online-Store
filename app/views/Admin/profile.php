@@ -1,4 +1,4 @@
-<script src="/Online-Store/Admin/javascript/login.js"></script>
+<title>Profile</title>
 <script>
     if(getId() === null)
     {

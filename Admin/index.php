@@ -4,6 +4,7 @@
 		require_once('../app/views/Admin/header.php');
 	?>
 	<body>
+		<script src="/Online-Store/Admin/javascript/login.js"></script>
 		<?php
             if(isset($_GET['page']))
             {
@@ -19,7 +20,7 @@
             }
             else
             {
-                
+				require_once('../app/views/Admin/login.php');
             }
         ?>
 	</body>

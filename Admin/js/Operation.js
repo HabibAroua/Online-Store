@@ -4,7 +4,7 @@ function IsEmail(email)
     return re.test(String(email).toLowerCase());
 }
 
-function test()
+function registration()
 {
     var first_name = $('#first_name').val();
     var last_name = $('#last_name').val();
@@ -139,4 +139,37 @@ function test()
             }
         }
     }
-}										
+}
+
+function authentication()
+{
+	var login = document.getElementById('login').value;
+	var password = document.getElementById('password').value;
+	var user = new User(login, password);
+	console.log(user.getLogin());
+	if((login === "") && (password ===""))
+	{
+        alertify.error("You should enter your (login or email) and your password");
+		$("#login").focus();
+	}
+	else
+	{
+		if(login === "")
+		{
+			alertify.error("You should enter your (login or email)");
+			$("#login").focus();
+		}
+		else
+		{
+			if(password === "")
+			{
+				alertify.error("You should enter your password");
+				$('#password').focus();
+			}
+			else
+			{
+				// testing login and password	
+			}
+		}
+	}
+}

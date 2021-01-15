@@ -103,7 +103,7 @@
 			(
 				function()
 				{
-					test();
+					registration();
 				}
 			);
 		}
