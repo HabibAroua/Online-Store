@@ -17,7 +17,6 @@ function registration()
     var password = $('#password').val();
     var confirm_password = $('#confirm_password').val();
     var user = new User(login, password,first_name,last_name,date_of_birth,email,telephone,address,country);
-	alert(password);
     if( user.getFirst_name() === "")
     {
     	$("#first_name").focus();
