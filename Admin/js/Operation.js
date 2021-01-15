@@ -14,66 +14,67 @@ function registration()
     var telephone = $('#telephone').val();
     var address = $('#address').val();
     var country = $('#country').val(); // is nationality in the database
-    var password = $('#confirm_password').val();
+    var password = $('#password').val();
     var confirm_password = $('#confirm_password').val();
     var user = new User(login, password,first_name,last_name,date_of_birth,email,telephone,address,country);
-    if(first_name === "")
+	alert(password);
+    if( user.getFirst_name() === "")
     {
     	$("#first_name").focus();
     	alertify.error('You Should enter your First name');
 	}
 	else
     {
-    	if(last_name === "")
+    	if(user.getLast_name() === "")
     	{
     		$("#last_name").focus();
     		alertify.error('You Should enter your Last name');
         }
         else
     	{
-    		if(login === "")
+    		if(user.getLogin() === "")
     		{
     			$("#login").focus();
     			alertify.error('You Should enter your login');
     		}
     		else
     		{
-    			if(birth_date ==="")
+    			if(user.getDate_of_birth() ==="")
     			{
     				$('#birth_date').focus();
     				alertify.error('You should enter your birth date');
     			}
     			else
     			{
-    				if(email === "")
+    				if(user.getEmail() === "")
     				{
     					$('#email').focus();
     					alertify.error('You should enter your email');
     				}
     				else
     				{
-    					if(telephone === "")
+    					if(user.getTelephone() === "")
     					{
     						$('#telephone').focus();
     						alertify.error('You should enter your telephone number');
     					}
     					else
     					{
-    						if(address === "")
+    						if(user.getAddress() === "")
     						{
     							$('#address').focus();
     							alertify.error('You should enter your address');
     						}
     						else
     						{
-    							if(country === "Select a country ...")
+    							if(user.getNationality() === "Select a country ...")
     							{
     								$('#country').focus();
     								alertify.error('You should enter your country');
     							}
     							else
                                 {
-    								if(password === "")
+    								if(user.getPassword() === "")
     								{
     									$('#password').focus();
     									alertify.error('You should enter your password');
@@ -87,14 +88,14 @@ function registration()
     									}
     									else
     									{
-    										if(password != confirm_password)
+    										if(user.getPassword() != confirm_password)
     										{
     											$('#confirm_password').focus();
     											alertify.error('Password and Confirm password are not identical');
     										}
                                             else
                                             {
-                                                if(IsEmail(email) === false)
+                                                if(IsEmail(user.getEmail()) === false)
                                                 {
                                                     $("#email").focus();
                                                     alertify.error("Your email should be like this format ex.user@domain.com");

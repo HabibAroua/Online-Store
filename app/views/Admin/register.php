@@ -72,7 +72,7 @@
 					<span class="btn-show-pass">
 						<i class="fa fa fa-eye"></i>
 					</span>
-					<input class="input100" type="confirm_password" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
+					<input class="input100" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="container-login100-form-btn">
