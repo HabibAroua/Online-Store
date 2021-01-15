@@ -147,21 +147,21 @@ function authentication()
 	var password = document.getElementById('password').value;
 	var user = new User(login, password);
 	console.log(user.getLogin());
-	if((login === "") && (password ===""))
+	if((user.getLogin() === "") && (user.getPassword() ===""))
 	{
         alertify.error("You should enter your (login or email) and your password");
 		$("#login").focus();
 	}
 	else
 	{
-		if(login === "")
+		if(user.getLogin() === "")
 		{
 			alertify.error("You should enter your (login or email)");
 			$("#login").focus();
 		}
 		else
 		{
-			if(password === "")
+			if(user.getPassword() === "")
 			{
 				alertify.error("You should enter your password");
 				$('#password').focus();
