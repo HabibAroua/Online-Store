@@ -42,10 +42,20 @@ class User
         this.password = password;
     }
     
+    getPassword()
+    {
+        return this.password;
+    }
+    
     //first_name
     setFirst_name(first_name)
     {
         this.first_name = first_name;
+    }
+    
+    getFirst_name()
+    {
+        return this.first_name;
     }
     
     //last_name
@@ -54,10 +64,20 @@ class User
         this.last_name = last_name;
     }
     
+    getLast_name()
+    {
+        return this.last_name;
+    }
+    
     //date_of_birth
     setDate_of_birth(date_of_birth)
     {
         this.date_of_birth = date_of_birth;
+    }
+    
+    getDate_of_birth()
+    {
+        return this.date_of_birth;
     }
     
     //email
@@ -66,10 +86,20 @@ class User
         this.email = email;
     }
     
+    getEmail()
+    {
+        return this.email;
+    }
+    
     //telephone
     setTelephone(telephone)
     {
         this.telephone = telephone;
+    }
+    
+    getTelephone()
+    {
+        return this.telephone;
     }
     
     //address
@@ -78,10 +108,20 @@ class User
         this.address = address;
     }
     
+    getAddress()
+    {
+        return this.address;
+    }
+    
     //nationality
     setNationality()
     {
         this.nationality = nationality;
+    }
+    
+    getNationality()
+    {
+        return this.nationality;
     }
     
     insert()
