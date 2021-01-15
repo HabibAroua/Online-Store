@@ -13,6 +13,8 @@
                     break;
                     case 'register' : require_once('../app/views/Admin/register.php');
                     break;
+					case 'profile' : require_once('../app/views/Admin/profile.php');
+					break;
                 }
             }
             else

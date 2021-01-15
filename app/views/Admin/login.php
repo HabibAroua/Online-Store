@@ -68,7 +68,7 @@
 <!--===============================================================================================-->
 <script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/moment.min.jers"></script>
 <script src="vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/countdowntime/countdowntime.js"></script>
