@@ -187,7 +187,6 @@ class User
                     res = response;
                 }
             );
-           console.log(JSON.parse(res).response);
            if(JSON.parse(res).response === "Login is exist")
            {
                 return true;
@@ -221,7 +220,6 @@ class User
                     res = response;
                 }
             );
-            console.log(JSON.parse(res).response);
            if(JSON.parse(res).response === "Email is exist")
            {
                 return true;

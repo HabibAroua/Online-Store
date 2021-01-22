@@ -168,7 +168,17 @@ function authentication()
 			}
 			else
 			{
-				// testing login and password	
+				if(user.loginIsExist())
+				{
+					alert("Login exist");
+				}
+				else
+				{
+					if(user.emailIsExist())
+					{
+						alert("Email exist");	
+					}
+				}
 			}
 		}
 	}

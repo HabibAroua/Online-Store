@@ -345,7 +345,7 @@
             $test = false;
             foreach($this->getAll() as $v )
             {
-                if($v{'login'} == $this->login)
+                if($v{'login'} === $this->login)
                 {
                     $test = true;
                     break;

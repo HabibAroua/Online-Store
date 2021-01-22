@@ -69,7 +69,7 @@
             $response = "";
             if($this->user->isLoginExist() == true)
             {
-                $response = "Login is not exist";
+                $response = "Login is exist";
             }
             else
             {
