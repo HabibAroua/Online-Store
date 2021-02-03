@@ -230,4 +230,45 @@ class User
                 return false;
            }
     }
+    
+    sign_in_by_login()
+    {
+        var res = null;
+        var login = this.login;
+        var password = this.password;
+           function call_ajax()
+            {
+                return $.ajax
+                (
+                    {
+                        async: false, //if you want to change a global variable you should add this instruction
+                        url : 'http://localhost/Online-Store/app/controllers/actions.php?class=User&action=sign_in_by_login',
+                        type : 'POST',
+                        data:
+                        {
+                            'login' : login,
+                            'password' : password
+                        }
+                    }
+                );
+            }
+            call_ajax().done
+            (
+                function(response)
+                {
+                    res = response;
+                    console.log(res);
+                }
+            );
+            if(JSON.parse(res).response === "good")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+    }
+    
+    
 }

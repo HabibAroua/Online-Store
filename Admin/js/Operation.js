@@ -176,7 +176,7 @@ function authentication()
 				{
 					if(user.emailIsExist())
 					{
-						alert("Email exist");	
+						//alert("Email exist");	
 					}
 				}
 			}

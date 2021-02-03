@@ -188,26 +188,26 @@
                                         echo "There is one POST";
                                     }
             break;
-            case 'sign_in_by_login' :   if($_POST['login'])
+            case 'sign_in_by_login' :   if(($_POST['login']) && ($_POST['password']))
                                         {
                                             //echo $userController->findPasswordByLogin($_POST['login']);
                                             $h =new Hash();
-                                            $h->setWord("azerty");
+                                            $h->setWord($_POST['password']);
                                             $h->setHashed_password($userController->findPasswordByLogin($_POST['login']));
-                                            $test = $h->verify();
-                                            if($test == true)
+                                            if($h->verify() == true)
                                             {
-                                                echo "good";
+                                                $response = "good";
                                             }
                                             else
                                             {
-                                                echo "bad";
+                                                $response = "good";
                                             }
                                         }
                                         else
                                         {
-                                            echo "You should enter a POST";
+                                            $response =  "You should enter two POSTS";
                                         }
+                                        echo json_encode(array('response'=> $response));
             break;
             case 'sign_in_by_email':    if($_POST['email'])
                                         {
@@ -218,12 +218,13 @@
                                             $test = $h->verify();
                                             if($test == true)
                                             {
-                                                echo "good";
+                                                $response = "good";
                                             }
                                             else
                                             {
-                                                echo "bad";
+                                                $response = "bad";
                                             }
+                                            echo json_encode(array('response'=> $response));
                                         }
                                         else
                                         {
