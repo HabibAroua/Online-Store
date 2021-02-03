@@ -177,7 +177,7 @@
                                         echo "There is one POST";
                                     }
             break;
-            case 'loginIsExist' : if(isset($_POST['login']))
+            case 'loginIsExist' :   if(isset($_POST['login']))
                                     {
                                         $user->setLogin($_POST['login']);
                                         $userController->setUser($user);

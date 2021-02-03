@@ -2,7 +2,7 @@
 <script>
     if(getId() === null)
     {
-        location.href = "?page=login";   
+        location.href = "?page=login";
     }
     else
     {

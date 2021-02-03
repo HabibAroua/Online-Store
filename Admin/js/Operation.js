@@ -170,7 +170,16 @@ function authentication()
 			{
 				if(user.loginIsExist())
 				{
-					alert("Login exist");
+					if(user.sign_in_by_login()) //boolean
+					{
+						alert("This password is correct");
+						login_user(user.getLogin());
+						location.href = "?page=profile";
+					}
+					else
+					{
+						alertify.error("This password is not correct");
+					}
 				}
 				else
 				{

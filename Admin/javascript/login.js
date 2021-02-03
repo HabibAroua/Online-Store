@@ -1,7 +1,7 @@
-function login(id)
+function login_user(id)
 {
-    var json =  id;// id login or email
-	localStorage.setItem("user",json);
+    var v =  id;// id login or email
+	localStorage.setItem("user",v);
 	//const obj = JSON.stringify(user);
 	//console.log(user.name);
 	return localStorage.getItem("user");
