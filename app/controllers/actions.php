@@ -9,7 +9,8 @@
     require_once('ProductController.php');
     require_once('UserController.php');
     require_once('../security/hash.php');
-    
+    require_once('../security/session.php'); 
+
     //action function of each class
     
     //Class Category
@@ -152,7 +153,7 @@
                                 //if($userController->isEmailExist() == true)
                                 //{
                                 echo $userController->insert();
-                                $userController->sendEmail($user->getEmail(),$user->getFirst_name());
+                                //$userController->sendEmail($user->getEmail(),$user->getFirst_name());
                             }
                             else
                             {
