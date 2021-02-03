@@ -200,7 +200,7 @@ class User
     emailIsExist()
     {
         var res = null;
-        var email = this.email;
+        var email = this.login;
            function call_ajax()
             {
                 return $.ajax
@@ -218,10 +218,11 @@ class User
                 function(response)
                 {
                     res = response;
+                    console.log(res);
                 }
             );
            if(JSON.parse(res).response === "Email is exist")
-           {
+            {
                 return true;
            }
            else
