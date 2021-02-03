@@ -224,12 +224,12 @@
                                             {
                                                 $response = "bad";
                                             }
-                                            echo json_encode(array('response'=> $response));
                                         }
                                         else
                                         {
-                                            echo "You should enter a POST";
+                                            $response = "You should enter a POST";
                                         }
+                                        echo json_encode(array('response'=> $response));
             break;
         }
     }
