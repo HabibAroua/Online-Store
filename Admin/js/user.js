@@ -187,14 +187,14 @@ class User
                     res = response;
                 }
             );
-           if(JSON.parse(res).response === "Login is exist")
-           {
+            if(JSON.parse(res).response === "Login is exist")
+            {
                 return true;
-           }
-           else
-           {
+            }
+            else
+            {
                 return false;
-           }
+            }
     }
     
     emailIsExist()
