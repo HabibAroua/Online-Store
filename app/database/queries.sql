@@ -7,23 +7,31 @@ ALTER TABLE test DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 create table Category
 (
     id int PRIMARY Key AUTO_INCREMENT,
-    name varchar(20),
+    label varchar(20),
     description text
-)
+);
+
+create table Sub_Category
+(
+    id int PRIMARY Key AUTO_INCREMENT,
+    label varchar(20),
+    description text
+    id_cat int
+);
 
 create table Product
 (
-    reference varchar(30),
+    id int primary key AUTO_INCREMENT,
+    reference varchar(30) UNIQUE,
     label varchar(25),
     price double,
     amount int,
     picture BINARY,
     description text,
-    idCat int
+    idSub_cat int
 );
-
-alter table Product add CONSTRAINT fk1 FOREIGN key (idCat) REFERENCES Category(id);
-alter table Product add CONSTRAINT fk2 PRIMARY KEY(reference);
+alter table Sub_Category add CONSTRAINT fk1 FOREIGN key(id_cat) REFERENCES Category(id)
+alter table Product add CONSTRAINT fk2 FOREIGN key (idSub_cat) REFERENCES Sub_Category(id);
 
 create table The_User
 (
@@ -33,6 +41,7 @@ create table The_User
     first_name varchar(30),
     last_name varchar(30),
     date_of_birth date,
+    picture BINARY,
     role int,
     email varchar(40),
     telephone varchar(9),

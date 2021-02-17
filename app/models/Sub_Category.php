@@ -3,7 +3,7 @@
     class Sub_Category
     {
         private $id;
-        private $name;
+        private $label;
         private $description;
         private $id_cat;
         
@@ -19,20 +19,20 @@
         }
         
         //name
-        public function getName()
+        public function getLabel()
         {
-            return $this->name;
+            return $this->label;
         }
         
-        public function setName($name)
+        public function setLabel($label)
         {
-            $this->name = $name;
+            $this->label = $label;
         }
         
         //description
         public function getDescription()
         {
-            return $this->name;
+            return $this->description;
         }
         
         public function setDescription($description)

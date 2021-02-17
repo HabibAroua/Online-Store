@@ -4,7 +4,7 @@
     class Category
     {
         private $id;
-        private $name;
+        private $label;
         private $description;
         private $products;
         
@@ -24,14 +24,14 @@
             $this->id = $id;
         }
         // name
-        public function getName()
+        public function getLabel()
         {
-            return $this->name;
+            return $this->label;
         }
         
-        public function setName($name)
+        public function setLabel($label)
         {
-            $this->name = $name;
+            $this->label = $label;
         }
         
         //description
@@ -84,10 +84,10 @@
                 global $connection;
                 $data =
                 [
-                    'name' => $this->name,
+                    'label' => $this->label,
                     'description' => $this->description,
                 ];
-                $sql = "INSERT INTO Category (name, description) VALUES (:name, :description)";
+                $sql = "INSERT INTO Category (label, description) VALUES (:label, :description)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -130,10 +130,10 @@
                 $data =
                 [
                     'id' => $this->id,
-                    'name' => $this->name,
+                    'label' => $this->label,
                     'description' => $this->description,
                 ];
-                $sql = "UPDATE Category SET name = :name , description = :description WHERE id = :id";
+                $sql = "UPDATE Category SET label = :label , description = :description WHERE id = :id";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -159,7 +159,7 @@
                     $T[$i] = $Array = array
                     (
                         'id'=>$tab[0],
-                        'name'=>$tab[1],
+                        'label'=>$tab[1],
                         'description'=>$tab[2],
                     );
                     $i++;

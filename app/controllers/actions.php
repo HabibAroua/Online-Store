@@ -20,7 +20,7 @@
         $c = new CategoryController();
         switch($action)
         {
-            case 'insert' : $cat->setName($_POST['name']);
+            case 'insert' : $cat->setLabel($_POST['label']);
                             $cat->setDescription($_POST['description']);
                             $c->setCategory($cat);
                             $c->insert();                
@@ -30,7 +30,7 @@
                             $c->delete();
             break;
             case 'update' : $cat->setId($_POST['id']);
-                            $cat->setName($_POST['name']);
+                            $cat->setLabel($_POST['label']);
                             $cat->setDescription($_POST['description']);
                             $c->setCategory($cat);
                             $c->update();
