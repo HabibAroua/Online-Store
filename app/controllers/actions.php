@@ -3,6 +3,7 @@
     //https://speckyboy.com/css-js-notification-alert-code/
     //require_once('../database/Connection.php');
     require_once('../models/Category.php');
+    require_once('../models/Sub_Category.php');
     require_once('../models/Product.php');
     require_once('../models/User.php');
     require_once('CategoryController.php');
@@ -44,6 +45,12 @@
             default : echo "Error, plase enter the right parameters";
             break;
         }
+    }
+    
+    //Class Sub_Category
+    function Sub_Category()
+    {
+        
     }
     
     //Class Product
@@ -244,6 +251,8 @@
                 case 'Product' : Product($_GET['action']);
                 break;
                 case 'User' : User($_GET['action']);
+                break;
+                case 'Sub_Category':
                 break;
             }
         }

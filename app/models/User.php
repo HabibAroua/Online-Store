@@ -8,6 +8,7 @@
         private $first_name;
         private $last_name;
         private $date_of_birth;
+        private $picture;
         private $role;
         private $email;
         private $telephone;
@@ -93,6 +94,17 @@
         public function  setDate_of_birth($date_of_birth)
         {
             $this->date_of_birth = $date_of_birth;
+        }
+        
+        //picture
+        public function getPicture()
+        {
+            return $this->picture;
+        }
+        
+        public function setPicture($picture)
+        {
+            $this->picture = $picture;
         }
         
         //role
@@ -184,6 +196,7 @@
                     'first_name' => $this->first_name,
                     'last_name' => $this->last_name,
                     'date_of_birth' => $this->date_of_birth,
+                    'picture' => $this->picture,
                     'role' => $this->role,
                     'email' => $this->email,
                     'telephone' => $this->telephone,
@@ -192,8 +205,39 @@
                     'isActive' => $this->isActive,
                     'registration_date' => $this->registration_date
                 ];
-                $sql = "INSERT INTO The_User (login, password, first_name, last_name, date_of_birth, role, email, telephone, address, nationality, isActive, registration_date)
-                        VALUES (:login, :password, :first_name, :last_name, :date_of_birth, :role, :email, :telephone, :address, :nationality, :isActive, :registration_date)";
+                $sql = "
+                        INSERT INTO The_User
+                        (
+                            login,
+                            password,
+                            first_name,
+                            last_name,
+                            date_of_birth,
+                            picture,
+                            role,
+                            email,
+                            telephone,
+                            address,
+                            nationality,
+                            isActive,
+                            registration_date
+                        )
+                        VALUES
+                        (
+                            :login,
+                            :password,
+                            :first_name,
+                            :last_name,
+                            :date_of_birth,
+                            :picture,
+                            :role,
+                            :email,
+                            :telephone,
+                            :address,
+                            :nationality,
+                            :isActive,
+                            :registration_date
+                        )";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
