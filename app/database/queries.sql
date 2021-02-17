@@ -15,7 +15,7 @@ create table Sub_Category
 (
     id int PRIMARY Key AUTO_INCREMENT,
     label varchar(20),
-    description text
+    description text,
     id_cat int
 );
 
