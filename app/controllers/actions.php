@@ -9,6 +9,7 @@
     require_once('CategoryController.php');
     require_once('ProductController.php');
     require_once('UserController.php');
+    require_once('Sub_CategoryController.php');
     require_once('../security/hash.php');
     require_once('../security/session.php'); 
 
@@ -48,9 +49,38 @@
     }
     
     //Class Sub_Category
-    function Sub_Category()
+    function Sub_Category($action)
     {
-        
+        $cat = new Sub_Category();
+        $c = new Sub_CategoryController();
+        switch($action)
+        {
+            case 'insert' : $cat->setLabel($_POST['label']);
+                            $cat->setDescription($_POST['description']);
+                            $cat->setId_cat($_POST['id_cat']);
+                            $c->setSub_category($cat);
+                            $c->insert();                
+            break;
+            case 'delete' : $cat->setId($_POST['id']);
+                            $c->setSub_category($cat);
+                            $c->delete();
+            break;
+            case 'update' : $cat->setId($_POST['id']);
+                            $cat->setLabel($_POST['label']);
+                            $cat->setDescription($_POST['description']);
+                            $cat->setId_cat($_POST['id_cat']);
+                            $c->setSub_category($cat);
+                            $c->update();
+            break;
+            case 'getAll' : echo $c->getAllJSON();
+            break;
+            case 'getProductByCategory' :   $cat->setId(2);
+                                            $c->setCategory($cat);
+                                            echo $c->getProductByCategoryJSON();
+            break;
+            default : echo "Error, plase enter the right parameters";
+            break;
+        }
     }
     
     //Class Product
@@ -252,7 +282,7 @@
                 break;
                 case 'User' : User($_GET['action']);
                 break;
-                case 'Sub_Category':
+                case 'Sub_Category': Sub_Category($_GET['action']);
                 break;
             }
         }

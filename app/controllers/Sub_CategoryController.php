@@ -8,7 +8,7 @@
             $this->sub_category = new Sub_Category();
         }
         
-        public function setSub_category($category)
+        public function setSub_category($sub_category)
         {
             $this->sub_category = $sub_category;
         }

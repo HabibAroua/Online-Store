@@ -10,7 +10,7 @@
         
         public function __construct()
         {
-            $this->products = array();
+            //$this->products = array();
         }
         
         // id
@@ -23,7 +23,8 @@
         {
             $this->id = $id;
         }
-        // name
+        
+        // label
         public function getLabel()
         {
             return $this->label;
@@ -68,7 +69,7 @@
                     'description' => $this->description,
                     'id_cat' => $this->id_cat,
                 ];
-                $sql = "INSERT INTO Category (label, description, id_cat) VALUES (:label, :description, :id_cat)";
+                $sql = "INSERT INTO Sub_Category (label, description, id_cat) VALUES (:label, :description, :id_cat)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -90,7 +91,7 @@
                 [
                     'id' => $this->id,
                 ];
-                $sql = "DELETE from Category where id =:id";
+                $sql = "DELETE from Sub_Category where id =:id";
                 $stmt = $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -115,7 +116,7 @@
                     'description' => $this->description,
                     'id_cat' => $this->id_cat,
                 ];
-                $sql = "UPDATE Category SET label = :label , description = :description id_cat = :id_cat WHERE id = :id";
+                $sql = "UPDATE Sub_Category SET label = :label , description = :description , id_cat = :id_cat WHERE id = :id";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -134,7 +135,7 @@
             {
                 global $connection;
                 $T = array();
-                $res = $connection->con->query("SELECT * from Category");
+                $res = $connection->con->query("SELECT * from Sub_Category");
                 $i = 0;
                 while($tab=$res->fetch(PDO::FETCH_NUM))
                 {
