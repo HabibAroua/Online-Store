@@ -3,6 +3,7 @@
     require_once('Connection_Chain.php');
     class Product
     {
+        private $id;
         private $reference;
         private $label;
         private $price;
@@ -11,6 +12,17 @@
         private $description;
         private $idSub_cat;
 
+        //id
+        public function getId()
+        {
+            return $this->id;
+        }
+        
+        public function setId($id)
+        {
+            $this->id = $id;
+        }
+        
         //reference
         public function getReference()
         {
@@ -125,9 +137,9 @@
                 global $connection;
                 $data =
                 [
-                    'reference' => $this->reference,
+                    'id' => $this->id,
                 ];
-                $sql = "DELETE from Product where reference =:reference";
+                $sql = "DELETE from Product where id =:id";
                 $stmt = $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -140,13 +152,14 @@
         }
         
         //update
-        public function update($ref)
+        public function update()
         {
             try
             {
                 global $connection;
                 $data =
                 [
+                    'id' => $this->id,
                     'reference' => $this->reference,
                     'label' => $this->label,
                     'price' => $this->price,
@@ -156,14 +169,14 @@
                     'idSub_cat' => $this->idSub_cat,
                 ];
                 $sql = "UPDATE Product SET
-                        reference = :reference ,
-                        label = :label ,
-                        price = :price ,
-                        amount = :amount ,
-                        picture = :picture ,
-                        description = :description,
-                        idSub_cat = :idSub_cat
-                        WHERE reference = '$ref'";
+                            reference = :reference ,
+                            label = :label ,
+                            price = :price ,
+                            amount = :amount ,
+                            picture = :picture ,
+                            description = :description,
+                            idSub_cat = :idSub_cat
+                        WHERE id = :id";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;

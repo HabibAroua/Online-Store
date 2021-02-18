@@ -116,9 +116,9 @@
                                 echo "Error : There are 7 inputs !!";
                             }
             break;
-            case 'delete' : if(isset($_POST['reference']))
+            case 'delete' : if(isset($_POST['id']))
                             {
-                                $p->setReference($_POST['reference']);
+                                $p->setId($_POST['id']);
                                 $productCpntroller->setProduct($p);
                                 $productCpntroller->delete();
                             }
@@ -136,9 +136,10 @@
                                 (isset($_POST['picture'])) &&
                                 (isset($_POST['description']))&&
                                 (isset($_POST['idSub_cat'])) &&
-                                (isset($_POST['ref']))
+                                (isset($_POST['id']))
                             )
                             {
+                                $p->setId($_POST['id']);
                                 $p->setReference($_POST['reference']);
                                 $p->setLabel($_POST['label']);
                                 $p->setPrice($_POST['price']);
@@ -147,7 +148,7 @@
                                 $p->setDescription($_POST['description']);
                                 $p->setIdSub_cat($_POST['idSub_cat']);
                                 $productCpntroller->setProduct($p);
-                                $productCpntroller->update($_POST['ref']);
+                                $productCpntroller->update();
                             }
                             else
                             {

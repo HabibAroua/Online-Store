@@ -26,9 +26,9 @@
             }
         }
         
-        public function update($ref)
+        public function update()
         {
-            if($this->product->update($ref))
+            if($this->product->update())
             {
                 echo "{'response' : 'good'}";
             }
