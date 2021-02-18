@@ -9,7 +9,7 @@
         private $amount;
         private $picture;
         private $description;
-        private $idCat;
+        private $idSub_cat;
 
         //reference
         public function getReference()
@@ -77,15 +77,15 @@
             $this->description = $description;
         }
         
-        //idCat
-        public function getIdCat()
+        //idSub_cat
+        public function getIdSub_cat()
         {
-            return $this->idCat;
+            return $this->idSub_cat;
         }
         
-        public function setIdCat($idCat)
+        public function setIdSub_cat($idSub_cat)
         {
-            $this->idCat = $idCat;
+            $this->idSub_cat = $idSub_cat;
         }
         
         //add
@@ -102,10 +102,10 @@
                     'amount' => $this->amount,
                     'picture' => $this->picture,
                     'description' => $this->description,
-                    'idCat' =>$this->idCat,
+                    'idSub_cat' =>$this->idSub_cat,
                 ];
-                $sql = "INSERT INTO Product (reference, label, price, amount, picture, description, idCat)
-                        VALUES (:reference, :label, :price, :amount, :picture, :description, :idCat)";
+                $sql = "INSERT INTO Product (reference, label, price, amount, picture, description, idSub_cat)
+                        VALUES (:reference, :label, :price, :amount, :picture, :description, :idSub_cat)";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
                 return true;
@@ -153,6 +153,7 @@
                     'amount' => $this->amount,
                     'picture' => $this->picture,
                     'description' => $this->description,
+                    'idSub_cat' => $this->idSub_cat,
                 ];
                 $sql = "UPDATE Product SET
                         reference = :reference ,
@@ -160,7 +161,8 @@
                         price = :price ,
                         amount = :amount ,
                         picture = :picture ,
-                        description = :description
+                        description = :description,
+                        idSub_cat = :idSub_cat
                         WHERE reference = '$ref'";
                 $stmt= $connection->con->prepare($sql);
                 $stmt->execute($data);
