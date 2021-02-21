@@ -243,6 +243,8 @@
                                             if($h->verify() == true)
                                             {
                                                 $response = "good";
+                                                //$s = new Session();
+                                                $s->test();
                                             }
                                             else
                                             {
