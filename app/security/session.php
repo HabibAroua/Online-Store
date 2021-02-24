@@ -18,7 +18,7 @@
             session_start ();
             if ((isset($_SESSION['login']) && isset($_SESSION['password'])))
             {
-				
+				//it means that u can sign up
             }
             else
             {
