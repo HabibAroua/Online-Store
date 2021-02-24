@@ -9,19 +9,20 @@
 		    setcookie('password', $password, time() + $s);
 		    $_SESSION['login'] = $login;
 		    $_SESSION['password'] = $password;
-		    header ("location: $page");
+			$_COOKIE['login'] = $login;
+		    //header ("location: $page");
         }
         
         public function afterConnection()
         {
             session_start ();
-            if (isset($_SESSION['login']) && isset($_SESSION['password']) && isset($_COOKIE['login']) )
+            if ((isset($_SESSION['login']) && isset($_SESSION['password'])))
             {
 				
             }
             else
             {
-                header ('location: index.php?page=login');
+                header ('location: ?page=login');
             }
         }
         

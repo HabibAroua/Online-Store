@@ -175,6 +175,7 @@ function authentication()
 						alert("This password is correct");
 						login_user(user.getLogin());
 						location.href = "?page=profile";
+						location.replace("?page=profile");
 					}
 					else
 					{

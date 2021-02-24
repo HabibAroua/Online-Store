@@ -260,6 +260,7 @@ class User
                     console.log(res);
                 }
             );
+            
             if(JSON.parse(res).response === "good")
             {
                 return true;
@@ -268,6 +269,7 @@ class User
             {
                 return false;
             }
+            
     }
     
     

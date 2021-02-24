@@ -242,13 +242,13 @@
                                             $h->setHashed_password($userController->findPasswordByLogin($_POST['login']));
                                             if($h->verify() == true)
                                             {
+                                                $s = new Session();
+                                                $s->connect($_POST['login'], $_POST['password'],'?page=profile',3600);
                                                 $response = "good";
-                                                //$s = new Session();
-                                                $s->test();
                                             }
                                             else
                                             {
-                                                $response = "good";
+                                                $response = "bad";
                                             }
                                         }
                                         else

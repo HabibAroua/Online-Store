@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<?php
+		require_once('../app/security/session.php');
+		$s = new Session();
 		require_once('../app/views/Admin/header.php');
 	?>
 	<body>
@@ -14,7 +16,7 @@
                     break;
                     case 'register' : require_once('../app/views/Admin/register.php');
                     break;
-					case 'profile' : require_once('../app/views/Admin/profile.php');
+					case 'profile' : $s->afterConnection(); require_once('../app/views/Admin/profile.php');
 					break;
                 }
             }
