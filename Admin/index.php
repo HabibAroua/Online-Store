@@ -14,7 +14,7 @@
                 {
                     case 'login' : require_once('../app/views/Admin/login.php');
                     break;
-                    case 'register' : require_once('../app/views/Admin/register.php');
+                    case 'register' : require_once('../app/views/Admin/register.php'); //template : https://athemes.com/collections/free-bootstrap-admin-templates/
                     break;
 					case 'profile' : $s->afterConnection(); require_once('../app/views/Admin/profile.php');
 					break;
