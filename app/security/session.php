@@ -34,9 +34,5 @@
             header ('location: index.php?page=login');
         }
         
-        public function test()
-        {
-            echo "test session";
-        }
     }
 ?>
