@@ -145,6 +145,7 @@ function authentication()
 {
 	var login = document.getElementById('login').value;
 	var password = document.getElementById('password').value;
+	alert(login+' '+password);
 	var user = new User(login, password);
 	console.log(user.getLogin());
 	if((user.getLogin() === "") && (user.getPassword() ===""))
