@@ -93,6 +93,7 @@
 		<!--</div> 
 	</div>
 </div>-->
+<script src="/Online-Store/Admin/js/user.js"></script>
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth px-0">
@@ -124,13 +125,13 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+					<input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
                 </div>
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
-                      I agree to all Terms & Conditions
+						I agree to all Terms & Conditions
                     </label>
                   </div>
                 </div>
@@ -154,10 +155,10 @@
   <script src="../../vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/todolist.js"></script>
   <!-- endinject -->
 <script src="/Online-Store/Admin/js/Operation.js"></script>
 <script>
