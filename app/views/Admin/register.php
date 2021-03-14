@@ -105,13 +105,22 @@
               </div>
               <h4>New here?</h4>
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form class="pt-3">
+              <!--<form class="pt-3">-->
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg"  placeholder="Username" id="login">
+                  <input type="text" class="form-control form-control-lg"  placeholder="Login" id="login">
                 </div>
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" placeholder="Email" id="email">
                 </div>
+				<div class="form-group">
+					<input type="text" class="form-control form-control-lg" placeholder="First name" id="first_name">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control form-control-lg" placeholder="Last name" id="last_name">
+				</div>
+				<div class="form-group">
+					<input class="form-control form-control-lg" type="date" name="birth_date" placeholder="Birth date" min="1940-12-31" max="1999-12-31" id="birth_date">
+				</div>
                 <div class="form-group" >
                   <select class="form-control form-control-lg" id="country">
                     <option>Country</option>
@@ -124,24 +133,33 @@
 					<option>Japan</option>
                   </select>
                 </div>
+				<div class="form-group">
+					<input class="form-control form-control-lg" type="text" name="address" placeholder="Address" id="address">
+				</div>
+				<div class="form-group">
+					<input class="form-control form-control-lg" type="text" name="telephone" placeholder="Telephone" id="telephone">
+				</div>
                 <div class="form-group">
 					<input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                </div>
+				<div class="form-group">
+					<input type="password" class="form-control form-control-lg" id="confirm_password" placeholder="Confirm your password">
                 </div>
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
+                      <input type="checkbox" id="checkbox_register" class="form-check-input">
 						I agree to all Terms & Conditions
                     </label>
                   </div>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" id="btRegister" onclick="verif();">SIGN UP</a>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   Already have an account? <a href="login.html" class="text-primary">Login</a>
                 </div>
-              </form>
+              <!--</form>-->
             </div>
           </div>
         </div>
@@ -162,11 +180,19 @@
   <!-- endinject -->
 <script src="/Online-Store/Admin/js/Operation.js"></script>
 <script>
+	function verif()
+	{
+		var check = document.getElementById('checkbox_register').checked;
+		alert(check);
+		alert("hello world");
+	}
+</script>
+<script>
 	$(document).ready
 	(
 		function()
 		{
-			$("button").click
+			$("#btRegister").click
 			(
 				function()
 				{
