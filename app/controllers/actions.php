@@ -199,6 +199,9 @@
                                 //if($userController->isEmailExist() == true)
                                 //{
                                 echo $userController->insert();
+                                $s = new Session();
+                                $s->connect($_POST['login'], $_POST['password'],'?page=profile',3600);
+
                                 //$userController->sendEmail($user->getEmail(),$user->getFirst_name());
                             }
                             else
@@ -259,7 +262,6 @@
             break;
             case 'sign_in_by_email':    if($_POST['email'])
                                         {
-                                            //echo $userController->findPasswordByLogin($_POST['login']);
                                             $h =new Hash();
                                             $h->setWord("azereety");
                                             $h->setHashed_password($userController->findPasswordByEmail($_POST['email']));
