@@ -17,45 +17,45 @@ function registration()
     var password = $('#password').val();
     var confirm_password = $('#confirm_password').val();
     var user = new User(login, password,first_name,last_name,date_of_birth,email,telephone,address,country);
-    if( user.getFirst_name() === "")
+    if( user.getLogin() === "")
     {
-    	$("#first_name").focus();
-    	alertify.error('You Should enter your First name');
+    	$("#login").focus();
+    	alertify.error('You Should enter your Login');
 	}
 	else
     {
-    	if(user.getLast_name() === "")
+    	if(user.getEmail() === "")
     	{
-    		$("#last_name").focus();
-    		alertify.error('You Should enter your Last name');
+    		$("#email").focus();
+    		alertify.error('You Should enter your Email');
         }
         else
     	{
-    		if(user.getLogin() === "")
+    		if(user.getFirst_name() === "")
     		{
-    			$("#login").focus();
-    			alertify.error('You Should enter your login');
+    			$("#first_name").focus();
+    			alertify.error('You Should enter your first name');
     		}
     		else
     		{
-    			if(user.getDate_of_birth() ==="")
+    			if(user.getLast_name() ==="")
     			{
-    				$('#birth_date').focus();
-    				alertify.error('You should enter your birth date');
+    				$('#last_name').focus();
+    				alertify.error('You should enter your Last name');
     			}
     			else
     			{
-    				if(user.getEmail() === "")
+    				if(user.getDate_of_birth() === "")
     				{
-    					$('#email').focus();
-    					alertify.error('You should enter your email');
+    					$('#birth_date').focus(); 
+    					alertify.error('You should enter your date of birth');
     				}
     				else
     				{
-    					if(user.getTelephone() === "")
+    					if(user.getNationality() === "Country")
     					{
-    						$('#telephone').focus();
-    						alertify.error('You should enter your telephone number');
+    						$('#country').focus();
+    						alertify.error('You should enter your country');
     					}
     					else
     					{
@@ -66,10 +66,10 @@ function registration()
     						}
     						else
     						{
-    							if(user.getNationality() === "Select a country ...")
+    							if(user.getTelephone() === "")
     							{
-    								$('#country').focus();
-    								alertify.error('You should enter your country');
+    								$('#telephone').focus();
+    								alertify.error('You should enter your telephone number');
     							}
     							else
                                 {
