@@ -119,7 +119,8 @@ function registration()
                                                 		{
                                                 			if(user.insert())
                                                 			{
-                                                				alertify.success('Congratulation ! Your registration is successful');	
+                                                				alertify.success('Congratulation ! Your registration is successful');
+																location.href = "?page=profile";
                                                 			}
                                                 			else
                                                 			{
@@ -145,7 +146,6 @@ function authentication()
 {
 	var login = document.getElementById('login').value;
 	var password = document.getElementById('password').value;
-	alert(login+' '+password);
 	var user = new User(login, password);
 	console.log(user.getLogin());
 	if((user.getLogin() === "") && (user.getPassword() ===""))
@@ -173,7 +173,6 @@ function authentication()
 				{
 					if(user.sign_in_by_login()) //boolean
 					{
-						alert("This password is correct");
 						login_user(user.getLogin());
 						location.href = "?page=profile";
 						location.replace("?page=profile");
